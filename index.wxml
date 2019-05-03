@@ -1,0 +1,8 @@
+
+<view class="arrange" style="flex-direction:row;">
+  <view wx:for="{{txtArray}}" wx:key="">
+    <view data-text="{{item.text}}" class="arrange" bindtap="popUp" hover-class='hover'>
+      {{item.text}}
+    </view>
+  </view>
+</view>
