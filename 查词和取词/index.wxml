@@ -6,3 +6,24 @@
     </view>
   </view>
 </view>
+
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="result" wx:if="{{result.basic!=null}}">
+    <text class="wordtext" bindtap="audioPlay">{{result.query}}</text>
+    <audio src="http://dict.youdao.com/speech?audio={{result.query}}" id="myAudio"></audio>
+    <view>
+      <text class="phonetic">[英][{{ukPhonetic}}]</text>
+      <text class="phonetic">[美][{{usPhonetic}}]</text>
+   </view>
+  </view>
+  <view class="result" wx:elif="{{result.basic==null}}">
+    Nothing
+  </view>
+</view>
+
+ <audio
+  src="{{src}}"
+  id="myAudio"
+></audio>
+
+
