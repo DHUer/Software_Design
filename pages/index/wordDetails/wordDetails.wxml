@@ -1,0 +1,57 @@
+<view class='page'>
+  <view class="head">
+    <view class="detail_word">{{content}}</view>
+
+<view class='meaning'>
+    <view class="detail_pron">
+      <image bindtap="read" style="width: 20px; height: 20px; " mode="scaleToFill" src="../../../images/greenTrumpet.png" id="{pron_audio.uk[0]}}"></image>
+      <view bindtap="read" id="{{pron_audio.uk[0]}}">英/{{pron.uk}}/</view>
+      <image bindtap="read" id="{{pron_audio.us[0]}}" style="width: 20px; height: 20px; " mode="scaleToFill" src="../../../images/greenTrumpet.png"></image>
+      <view bindtap="read" id="{{pron_audio.us[0]}}">美/{{pron.us}}/</view>
+    </view>
+    <view style="width:80%;font-size: 14px;font-family: Songti TC;padding-bottom: 6px;">
+      {{definition}}
+    </view>
+</view>
+
+  </view>
+  <view class="body">
+    <view style="width:85%; color:gray;text-align:right;padding-bottom:20px;font-size:16px; font-weight: 800; ">
+
+    </view>
+    <view wx:if="{{!(more)}}">
+      <view class="liju_content">
+        <view class="detail_defin">
+          {{defen[0].first}}
+          <view style="color:rgb(116, 171, 30);display:inline;">{{defen[0].mid}}</view>
+          {{defen[0].last}}
+        </view>
+        <view class="detail_trans">{{defen[0].translation}}</view>
+        <view style="padding-bottom:20px;"></view>
+        <view class="detail_defin">
+          {{defen[2].first}}
+          <view style="color:rgb(116, 171, 30);display:inline;">{{defen[2].mid}}</view>
+          {{defen[2].last}}
+        </view>
+        <view class="detail_trans">{{defen[2].translation}}</view>
+        <view style="padding-bottom:20px;"></view>
+        <view class="detail_defin">
+          {{defen[3].first}}
+          <view style="color:rgb(116, 171, 30);display:inline;">{{defen[3].mid}}</view>
+          {{defen[3].last}}
+        </view>
+        <view class="detail_trans">{{defen[3].translation}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view wx:if="{{more}}">
+      <import src="itemtpl" />
+      <view class="liju_content">
+        <block wx:for="{{defen}}">
+          <template is="more-item" data="{{item}}" />
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

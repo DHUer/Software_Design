@@ -1,0 +1,46 @@
+<view class="arrange" >
+  <view wx:for="{{txtArray}}" wx:key=""  data-text="{{item}}" data-text="{{item}}" bindtap="popUp" hover-class='hover'>
+        <text style='margin-left: 10px;word-break:break-all;' >{{item}}</text>
+  </view>
+</view>
+
+<view class='close_icon' wx:if="{{showModal}}">
+  <text class="iconfont icon-close" bindtap='closeWindow'></text>
+</view>
+
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="result" wx:if="{{result.basic!=null}}">
+    <view class='head_arrange' >
+    <text class="wordtext " bindtap="audioPlay">{{result.query}}</text>
+    <text class="iconfont icon-horn" style='color:rgb(116, 171, 30); margin:15px;font-size:25px' bindtap="audioPlay"></text>
+    </view>
+    <audio src="http://dict.youdao.com/speech?audio={{result.query}}" id="myAudio"></audio>
+    <view wx:if="ukPhonetic != null" >
+
+      <text class="phonetic" bindtap="audioPlay">[英][{{ukPhonetic}}]</text>
+      <text class="phonetic" bindtap="audioPlay">[美][{{usPhonetic}}]</text>
+      
+    </view>
+    <view>
+      <text class='phonetic' wx:for="{{result.basic.exam_type}}" >{{item}}</text>
+    </view>
+    <view class="paraphrase" wx:for="{{result.basic.explains}}" wx:key="index" wx:for-item="item" wx:if="{{index<3}}">
+    {{item}}
+    </view>
+  </view>
+  <view class="result" wx:elif="{{result.basic==null}}">
+    No such words
+  </view>
+</view>
+
+<view class='operations' wx:if="{{showModal}}" >
+  <view style='margin:10px' bindtap='detailListener'>
+    <text class="iconfont icon-visible" style='font-size:15px;'>查看详解</text>
+    
+  </view>
+  <view style='margin-left:130px;margin-top:10px; '>
+    <text class="iconfont icon-increase" style='font-size:15px;'>添加到单词本</text>
+  </view>
+</view>
+
+<audio src="{{src}}" id="myAudio"></audio>
