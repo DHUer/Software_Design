@@ -14,6 +14,8 @@
     <view>
       <text class="phonetic">[英][{{ukPhonetic}}]</text>
       <text class="phonetic">[美][{{usPhonetic}}]</text>
+      <text class="phonetic">[美][{{usPhonetic}}]</text>
+      <!--<text class="phonetic">[美][{{usPhonetic}}]</text> -->
    </view>
   </view>
   <view class="result" wx:elif="{{result.basic==null}}">
