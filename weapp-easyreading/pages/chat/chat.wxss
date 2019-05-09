@@ -1,0 +1,73 @@
+.chat-item{
+  position: relative;
+    margin: 0 auto;
+    margin-top: 12px;
+    width: 600rpx;
+    height: 180rpx;
+    padding: 30rpx;
+    background: #FFFFFF;
+    border: solid 1px #ebebeb;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #bebebe;
+}
+
+.chat-item .chat-content{
+  flex: 4;
+  text-align: left;
+  margin-left: 6px;
+}
+.chat-item .chat-content text{
+  /*display: block;*/
+}
+.chat-item .chat-content .chat-source{
+  color: #818A8F;
+  font-size: 28rpx;
+  padding: 4rpx 0 8rpx 0;
+}
+.chat-item .chat-content .chat-source .chatmate{
+  font-size: 34rpx;
+  color: #000000;
+  text-align: left;
+}
+.chat-item .chat-content .chat-source .pronounce{
+  margin-left: 15px;
+  flex: 1;
+  font-size: 22rpx;
+  vertical-align: text-bottom;
+}
+.chat-item .chat-content .chat-txt{
+  color: #7b7b7b;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  margin-left:20px;
+
+}
+
+.chat-item .chat-content .tag{
+   height: 28rpx;
+    padding: 8rpx 8rpx;
+    border-radius: 2rpx;
+    background: #EEF5F8;
+    color:#38c938;
+    font-size: 20rpx;
+    font-style: #7b7b7b;
+    float:left;
+    vertical-align: middle;
+}
+.chat-item .more{
+  position: relative;
+  margin:0px 10px 10px 10px;
+  bottom: 8px;
+}
+
+.chat-item .more .delete{
+   height: 28rpx;
+    padding: 8rpx 8rpx;
+    border-radius: 6rpx;
+    border:1px solid #c7c5c5;
+     color: #7b7b7b;
+    background: #FFFFFF;
+    font-size: 20rpx;
+    vertical-align: middle;
+    float: right;
+}

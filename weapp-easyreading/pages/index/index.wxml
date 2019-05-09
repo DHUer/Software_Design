@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <!--<view class="search flex-wrp">
+      <view class="search-left flex-item">
+          <image src="../../images/search.png"></image>
+          <input placeholder="搜索话题, 问题或人" placeholder-class="search-placeholder"/>
+      </view>
+      <view class="search-right flex-item" bindtap="upper">
+          <image src="../../images/lighting.png"></image>
+      </view>
+  </view>-->
+
+    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+  
+       <view class="feed-item">
+
+            <view class="feed-content">
+
+                <view class="question" qid="{{question_id}}">
+                    <a class="question-link">
+                        <text>{{item.question}}</text>
+                    </a>
+                </view>
+
+                <view class="answer-body flex-wrp" bindtap="bindItemTap">
+                    <a class="">
+                        <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+                        </a>
+                    <view class="avatar flex-item">
+                       <image src="{{item.feed_source_img}}"></image>
+                  </view>
+                </view>
+
+
+<view class="art-more">
+
+<view class="left">
+              <view class="art-tag">
+                <text class="tag">四级</text>
+                <text class="tag">生活</text>
+               </view>
+               </view>
+
+<view class="right">
+                    <view class="book">
+                        <image src="../../images/book.png"></image>
+                        <text>500词 </text>
+                    </view>
+                    <view class="watch">
+                        <image src="../../images/eye.png"></image>
+                        <text>3316</text>
+                    </view>
+                    <view class="comment">
+                        <image src="../../images/star.png"></image>
+                        <text>27</text>
+                    </view>
+</view>
+                
+      
+
+            </view>
+
+            </view>
+
+        </view>
+        
+    </block>
+</scroll-view>
+

@@ -1,0 +1,225 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*padding: 200rpx 0;*/
+  box-sizing: border-box;
+  background: #F0F4F3;
+}
+
+.container.withtab{
+  margin: 105rpx 0 0 0;
+  /*top: 105rpx;*/
+}
+.flex-wrp{
+  display: flex;
+}
+.flex-tab{
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.flex-item{
+  flex-grow: 1;
+  text-align: center;
+}
+.top-tab{
+  width: 750rpx;
+  height: 100rpx;
+  background: #298DE5;
+  color: #8CCEFD;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  box-shadow: 0 2px 2px #bebebe;
+  margin: 0 0 8rpx 0;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+.toptab.active{
+  color: #ffffff;
+  border-bottom: solid 2px #ffffff;
+}
+.container{
+  padding: 0;
+  font-size: 14rpx;
+  color: #000;
+}
+.container .feed-item{
+   position: relative;
+    margin: 0 auto;
+    margin-top: 12px;
+    width: 630rpx;
+    height: 240rpx;
+    padding: 30rpx;
+    background: #FFFFFF;
+    border: solid 1px #ebebeb;
+    border-radius: 3px;
+    box-shadow: 4px 4px 10px #bebebe;
+}
+.container .feed-item .feed-source{
+  width: 630rpx;
+  left: 0;
+  height: 50rpx;
+}
+.container .feed-item .feed-source .avatar{
+  position: relative;
+  display: inline-block;
+}
+.container .feed-item .feed-source a{
+  display: inline-block;
+  height: 40rpx;
+}
+.container .feed-item .feed-source .avatar image{
+  /*position: absolute;*/
+  display: inline-block;
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 45rpx;
+  top: 10rpx;
+  vertical-align: middle;
+}
+.container .feed-item .feed-source text{
+  /*position: absolute;*/
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  vertical-align: middle;
+  margin: 0 0 0 15rpx;
+  color: #a0acac;
+  font-size: 26rpx;
+}
+.container .feed-item .feed-source .item-more{
+  display: inline-block;
+  width: 40rpx;
+  height: 45rpx;
+  float: right;
+}
+.container .feed-item .feed-content{
+  padding: 10rpx 0 0 0;
+}
+.container .feed-item .feed-content .question text{
+  font-size: 28rpx;
+  font-weight: 600px;
+  line-height: 40rpx;
+  text-space: 5rpx;
+}
+.container .feed-item .feed-content .answer-body{
+  padding: 10rpx 0 0 0;
+  /*height: 10rpx;*/
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #5b5b5b;
+  flex-wrap: nowrap;
+}
+/*mine*/
+.container .feed-item .feed-content .answer-body a{
+   display: inline-block;
+   width: 240px;
+}
+
+.container .feed-item .feed-content .answer-body .avatar{
+   width: 120rpx;
+    height: 120rpx;
+}
+
+
+.container .feed-item .feed-content .art-more .art-tag .tag{
+   height: 28rpx;
+    padding: 8rpx 20rpx;
+    border-radius: 20rpx;
+    margin: 8rpx 5rpx;
+    background: #EEF5F8;
+    color:#38c938;
+    font-size: 20rpx;
+    vertical-align: middle;
+}
+
+.container .feed-item .feed-content .art-more{
+    margin-top:10px;
+    height: 60rpx;
+}
+
+.container .feed-item .feed-content .art-more view{
+    display: inline-block;
+    margin: 0 10rpx 0 0;
+}
+
+.container .feed-item .feed-content .art-more image{
+    width:25rpx;
+    height: 25rpx;
+    margin: 0 10rpx 0 0;
+    vertical-align: middle;
+}
+.container .feed-item .feed-content .art-more .left{
+    float: left;
+    padding: 10rpx 0;
+}
+.container .feed-item .feed-content .art-more .right text{
+    color: #AFAFAF;
+    height: 50rpx;
+    vertical-align: middle;
+    padding: 18rpx 0;
+    font-size: 24rpx;
+}
+
+.container .feed-item .feed-content .art-more .right{
+  float:right;
+}
+
+.container .feed-item .feed-content .answer-body .avatar image{
+   display: inline-block;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 20rpx;
+    float: right;
+}
+
+.container .feed-item .feed-content .answer-actions{
+  width: 630rpx;
+  padding: 10rpx 0  0;
+  color: #a0acac;
+}
+.container .feed-item .feed-content .answer-actions view{
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10rpx 0 0;
+  font-size: 24rpx;
+}
+.container .feed-item .feed-content .answer-actions .dot ::after{
+  content: "•";
+}
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1557057119065'); /* IE9 */
+  src: url('iconfont.eot?t=1557057119065#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAP0AAsAAAAACCAAAAOlAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDDAqDYIMWATYCJAMQCwoABCAFhG0HUxsDB8gekiSIQAEFAH/hzZNMEVRjWc/uBlEhyngCByjDKuWj44CEitF5IPdCvnCAQt78t6k/TknryOa/5kYmFvmkUSghE1Nkare9HXczP4nJzQw24AKyTGbKeJ+4d9oUn89qO661rE9R1AUYTaCA9qYu2sIFFKDF3jB25UUcJ1CvTwbNclPHAMAUxrhAXLqcVoClrEoNMdQK1SVLi3gGBrXpRnsd8OR/Pn7LC4ykKjOmbl40OkDNd/ItrVv8f7EpLgnIxnODrSJjBlCIw1LvNl2YnaFTr2T1xoB19Qu+0/8rfCdd6Wr/8ghJJqoZxY1gFuYy30mbS/Cd4pL4TuvcHLWMrkU17gHwHtF7pCf8sq4xFIyOmazsUo+QE+Uj9Cx1nbyYEInjF9PmrKVsMyRFM5mRdh4j7RZ1HTnRKu8gBibKki3e0TpJoS02hWIGJGLGoExMsKizbt+nXbYn4EcpRsHxW0/4zhKLeow2r6O/TR87ZVWUwxJ5e/GAJJPmdSp99w4j6T97CaMorcOWqI+xzF18zuJVKSls9OMYNiW5YdnRZpB3VKmDcYsigks/4GPH3Xp4ZrtvdUnFxv/NRPNec3rOlj7m3uvMccZdOYd0MCyYZjKtXr4Zk8EXbfuxFw7D4nNXG02jQn57ISh/iZdB6vDqNOZ0nRF83TMrVjcc7vMk159N7p6y8Rmvi905a+bB/MLUidi9tB4j/E+IIWz9Er3p1Uh4Na/uivndGLYhY02m3bze9MaES3ZibSOuAJ5xUv6STgJQKb/PlQCQr7RXf+Mw1/KCwPSIiq+Y+Xrqvn35rx+tVEB7f610Qzo/TdayoqgKw1aKrLSlmr9YeQVjE+rVo4IRbPdkDPk7krr+Wl0xkhq9yGqNkAt9BlUazKJarTnUm9a8ukEHgU6UOkxZARBanUDS7BOyVjfIhf4YVbp9RrXW0KHefsRs2WAsXHi9gKwickDbHOiyc37Wcoh4QOxDzqDXKiQVPoNBQsCVgLlZOdlCM/IjYYwZgZnOPFFkIStwPtgETkNeLwd5gXMju5g1JIp8WXY2W3alLDvnA7glAsRKhDhANnNALnYcP9atLcJz7++DOAV5WQk1ZRVJBiIIcHUO5cqS04LcrPW3KruWSwJmcsojErEgloDjAzUBN+I1sxyILx/khtiJsgz1SPPKZKNqbFtt1vx63xNug3rGGSVS5ChRpf7M6uSCmXaOnxPSL1qFcGBkPxf0O5pcXi9yZCwAAAAAAA==') format('woff2'),
+  url('iconfont.woff?t=1557057119065') format('woff'),
+  url('iconfont.ttf?t=1557057119065') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1557057119065#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dagou:before {
+  color: #ffffff;
+  content: "\e715";
+}
+
+.icon-Star:before {
+    color: #ffffff;
+  content: "\e716";
+}
+
+.icon-Sound:before {
+  color: #38c938;
+  content: "\e717";
+}
