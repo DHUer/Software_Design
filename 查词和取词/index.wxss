@@ -1,0 +1,38 @@
+.arrange{
+  display: flex;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.hover{
+  background-color: gray;
+}
+
+.modalDlg{
+    width: 100%;
+    height: 40%;
+    position: fixed;
+    top: 70%;
+    background-color: rgba(202, 167, 139, 0.507);
+    border-radius: 36rpx;
+    display: flex;
+}
+
+.result{
+  margin-left: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wordtext{
+  font-size: 25px;
+  margin: 10px;
+}
+
+.phonetic{
+  margin-left: 10px;
+  font-size: 13px;
+  color: gray;
+}
+

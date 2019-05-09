@@ -1,0 +1,99 @@
+.id-text {
+  font-size: 50rpx;
+  padding: 10rpx;
+}
+
+.mp-swipe-card-item {
+  height: 100%;
+  width: 100%;
+  padding: 20rpx;
+  /* background: linear-gradient(to right bottom, red, orange, green, purple); */
+}
+
+.flex-wrp{
+  display: flex;
+}
+
+.flex-item{
+  flex-grow: 1;
+  text-align: center;
+}
+
+.feed-content{
+  padding: 15rpx 0 0 0;
+}
+
+.feed-content .answer-body{
+  padding: 15rpx;
+  /*height: 10rpx;*/
+  font-size: 35rpx;
+  line-height: 40rpx;
+  color: #5b5b5b;
+}
+
+.feed-content .answer-body a{
+   display: inline-block;
+}
+
+
+.feed-content .avatar{
+   width: 550rpx;
+    height: 340rpx; 
+    margin-left: 15px;
+}
+
+.feed-content .avatar image{
+    width: 550rpx;
+    height: 340rpx;
+    border-radius: 10rpx;
+}
+.feed-tail{
+  bottom: 0px;
+  display: flex;
+  position: fixed;
+}
+
+.feed-tail .art-more .art-tag .tag{
+   height: 28rpx;
+    padding: 8rpx 20rpx;
+    border-radius: 20rpx;
+    margin: 8rpx 5rpx;
+    background: #EEF5F8;
+    color:#38c938;
+    font-size: 20rpx;
+    vertical-align: middle;
+}
+
+
+.feed-tail .art-more{
+    margin-top:10px;
+    height: 60rpx;
+}
+ 
+.feed-tail .art-more view{
+    display: inline-block;
+    margin: 0 10rpx 0 0;
+}
+
+.feed-tail .art-more image{
+    width:25rpx;
+    height: 25rpx;
+    margin: 0 10rpx 0 0;
+    vertical-align: middle;
+}
+.feed-tail .art-more .left{
+    float: left;
+    padding: 10rpx 0;
+}
+.feed-tail .art-more .right{
+  float:right;
+  margin-left: 60px;
+}
+.feed-tail .art-more .right text{
+    color: #AFAFAF;
+    height: 50rpx;
+    vertical-align: middle;
+    padding: 18rpx 0;
+    font-size: 24rpx;
+}
+

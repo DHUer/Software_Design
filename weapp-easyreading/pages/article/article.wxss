@@ -1,0 +1,85 @@
+/**answer.wxss**/
+
+.container {
+    padding: 0;
+    font-size: 14rpx;
+    background: #F0F4F3;
+    color: #000;
+}
+
+.title {
+    position: relative;
+    width: 650rpx;
+    padding: 40rpx 50rpx 30rpx;
+    background:#fff;
+    color: #000;
+    font-size: 38rpx;
+    line-height: 48rpx;
+}
+/*mine*/
+.title .date{
+  font-size: 25rpx;
+  color:  #AFAFAF;
+  width: 650px;
+}
+.art-more .art-tag .tag{
+   height: 28rpx;
+    padding: 8rpx 20rpx;
+    border-radius: 20rpx;
+    margin: 8rpx 5rpx;
+    background: #EEF5F8;
+    color: rgb(4, 211, 90);
+    font-size: 20rpx;
+    vertical-align: middle;
+}
+
+
+.art-more view{
+    display: inline-block;
+    margin: 0 10rpx 0 0;
+}
+
+.art-more image{
+    width:25rpx;
+    height: 25rpx;
+    margin: 0 10rpx 0 0;
+    vertical-align: middle;
+}
+
+.right text{
+    color: #AFAFAF;
+    height: 50rpx;
+    vertical-align: middle;
+    padding: 18rpx 0;
+    font-size: 24rpx;
+}
+.right{
+  float:right;
+}
+
+
+
+.answer-content{
+    padding: 10rpx 40rpx;
+    background: #ffffff;
+}
+.answer-content text{
+    font-size: 32rpx;
+    color: #454545;
+    line-height: 44rpx;
+}
+.answer-content image{
+    width: 100%;
+    margin: 0;
+    border-radius: 2px;
+}
+.over{
+    float: right;
+    padding: 20rpx 40rpx;
+    color: #ffffff;
+    background: #52C980;
+    border-radius: 20px;
+    font-size: 26rpx;
+    margin: 10px;
+}
+
