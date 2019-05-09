@@ -28,7 +28,7 @@
         <text>最近浏览</text>
       </view>
     </view>
-    <view class="my-item flex-wrp">
+    <view class="my-item flex-wrp" bindtap='bindTocards'>
       <view class="myitem-icon flex-item" >
         <image src="../../images/book.png"></image>
       </view>
@@ -36,10 +36,11 @@
         <text>我的书架</text>
       </view>
     </view>
-    <view class="my-item flex-wrp">
+    <view class="my-item flex-wrp"  bindtap="bindTodatasta">
       <view class="myitem-icon flex-item" >
         <image src="../../images/live.png"></image>
       </view>
+
       <view class="myitem-name flex-item">
         <text>数据统计</text>
       </view>

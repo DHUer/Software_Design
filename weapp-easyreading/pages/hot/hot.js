@@ -30,7 +30,7 @@ Page({
 
   bindItemTap: function() {
     wx.navigateTo({
-      url: '../answer/answer'
+      url: '../article/article'
     })
   },
   bindQueTap: function() {

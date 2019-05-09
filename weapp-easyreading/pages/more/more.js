@@ -12,6 +12,16 @@ Page({
       url: ''
     })
   },
+  bindTodatasta:function(){
+    wx.navigateTo({
+     // url: '../data_statistics/data_statistics'
+    })
+  },
+  bindTocards: function () {
+    wx.navigateTo({
+      url: '../article_card/article_card'
+    })
+  },
   onLoad: function () {
     console.log('onLoad')
     var that = this

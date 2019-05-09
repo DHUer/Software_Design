@@ -1,10 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/discovery/discovery",
-    "pages/chat/chat",
+    "pages/hot/hot",
+    "pages/words/words",
     "pages/more/more",
-    "pages/answer/answer"
+    "pages/article/article",
+    "pages/data_statistics/data_statistics",
+    "pages/article_card/article_card"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,13 +28,13 @@
         "selectedIconPath": "images/read-fill.png"
       },
       {
-        "pagePath": "pages/discovery/discovery",
+        "pagePath": "pages/hot/hot",
         "text": "",
         "iconPath": "images/compass.png",
         "selectedIconPath": "images/compass-fill.png"
       },
       {
-        "pagePath": "pages/chat/chat",
+        "pagePath": "pages/words/words",
         "text": "",
         "iconPath": "images/dic.png",
         "selectedIconPath": "images/dic-fill.png"
