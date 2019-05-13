@@ -10,6 +10,9 @@ Course Project of Software Engineering
 * 一条龙服务repo
   https://github.com/justjavac/awesome-wechat-weapp
   
+* 小程序登录、获取用户信息、openid和unionid详解
+  https://www.daguanren.cc/post/wxlogin_getuserinfo_openid_unionid.html
+  
   
 ### 功能点
 
