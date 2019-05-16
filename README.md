@@ -12,6 +12,7 @@ Course Project of Software Engineering
   
 * 小程序登录、获取用户信息、openid和unionid详解
   https://www.daguanren.cc/post/wxlogin_getuserinfo_openid_unionid.html
+  https://www.jianshu.com/p/2af0d2e9f375
   
   
 ### 功能点
