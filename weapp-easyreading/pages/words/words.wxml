@@ -1,15 +1,28 @@
-<view class="container chat" >
-  <view class="chat-item" wx:for="{{wordList}}" >
-    <view class="chat-content">
-      <view class="chat-source">
-        <text class="chatmate iconfont icon-Sound">{{item}}</text>
-        <text class="pronounce">/ddd/</text>
-      </view>
-      <view class="tag">释义</view>
-      <text class="chat-txt">你好~ 你好~ 你好~你好~ 你好~ 你好~你好~ 你好~ 你好~你好~ 你好~ 你好~</text>
+<view class="page">
+  <view class="job_day">
+    <view class="day_num" bindtap="getsql">{{day_num}}</view>
+    <view class="day_notice">
+      打卡天数
+      <image style="width: 30rpx; height: 30rpx;padding-left:5px;" mode="scaleToFill" src="../../images/time.png"></image>
     </view>
-    <view class="more">
-      <view class="delete">移出</view>
+  </view>
+
+  <view class="word_num">
+    <view class="new_word_num">
+      {{today_new_num}}
+      <view style="font-size:25rpx; ">今日新词</view>
+    </view>
+    <view class="lest_num">
+      {{lest_word}}
+      <view style="font-size:25rpx; ">已背单词</view>
+    </view>
+    <view class="today_word_num">
+      {{day_num}}
+      <view style="font-size:25rpx; ">累计打卡</view>
+    </view>
+    <view class="my_word_num">
+      {{my_word}}
+      <view style="font-size:25rpx; ">规划单词</view>
     </view>
   </view>
 </view>
