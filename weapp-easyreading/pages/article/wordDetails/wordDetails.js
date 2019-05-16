@@ -120,7 +120,8 @@ Page({
       success: function (res) {
         console.log(res)
         that.setData({
-          defen: [res.data.data[0], res.data.data[1], res.data.data[3], res.data.data[4]]
+          //defen: [res.data.data[0], res.data.data[1], res.data.data[2], res.data.data[3], res.data.data[4]]
+          defen: res.data.data
         })
         that.setData({
           bottomline: res.data.data[0].translation
