@@ -108,23 +108,22 @@
   text-space: 5rpx;
 }
 .container .feed-item .feed-content .answer-body{
-  padding: 10rpx 0 0 0;
-  /*height: 10rpx;*/
-  font-size: 24rpx;
-  line-height: 28rpx;
-  color: #5b5b5b;
-  flex-wrap: nowrap;
-  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    padding: 10rpx 0 0 0;
+    width: 100%;
+    height:60px;
+    /*height: 10rpx;*/
+    font-size: 27rpx;
+    line-height: 40rpx;
+    color: #5b5b5b;
+    overflow:hidden;
 }
 /*mine*/
-.container .feed-item .feed-content .answer-body a{
-   display: inline-block;
-   width: 240px;
+.container .feed-item .feed-content .answer-body .answer-text{
+
 }
 
 .container .feed-item .feed-content .answer-body .avatar{
-   width: 120rpx;
-    height: 120rpx;
+    margin-left: 10px;
 }
 
 
@@ -140,8 +139,8 @@
 }
 
 .container .feed-item .feed-content .art-more{
-    margin-top:10px;
-    height: 60rpx;
+   position: absolute;
+    bottom: 5px;
 }
 
 .container .feed-item .feed-content .art-more view{
@@ -168,7 +167,8 @@
 }
 
 .container .feed-item .feed-content .art-more .right{
-  float:right;
+    margin-top: 5px;
+    margin-left: 80px;
 }
 
 .container .feed-item .feed-content .answer-body .avatar image{

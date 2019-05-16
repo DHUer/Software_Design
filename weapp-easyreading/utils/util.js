@@ -1,3 +1,4 @@
+const Promise = require('./Promise.js')
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -50,7 +51,7 @@ function getData2(){
   wx.request({
     url: 'http://127.0.0.1:8000/index/',
     success: function(res){
-      
+
     }
   })
   return index.index;
@@ -69,13 +70,34 @@ function discoveryNext(){
   return discovery_next.next;
 }
 
+const categorysJson = require('./category')
+function getCategorys(){
+    return new Promise((resolve,reject) => {
+        // [{id:1,order:2...}]
+        var liked = wx.getStorageSync('USER_COLLECT') || [];
+        var categorys = categorysJson.data
 
+        categorys.forEach(category => {
+            if(!liked.length){
+                category.selected = true
+            }else{
+                category.selected = false
+                liked.forEach(like =>
+                    category.lanmu_id === like.id && (category.selected = true)
+                )
+            }
+        })
+
+        resolve(categorys)
+    })
+}
 
 module.exports.getData = getData;
 module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
+module.exports.getCategorys=getCategorys;
 
 
 

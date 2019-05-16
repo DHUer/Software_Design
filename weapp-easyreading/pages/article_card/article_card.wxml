@@ -9,9 +9,10 @@
       bind:click="handleClickCard"
       push-list="{{feed}}"
       bind:swipeout="handleSwipeOut"
-      generic:mp-swipe-card-item="card-item"   
+      generic:mp-swipe-card-item="card-item"
+      bindtap="bindItemTap"
     >
-      <view>{{item}}</view>  
+      <view>{{item}}</view>
     </mp-swipe-card>
   </view>
 </view>

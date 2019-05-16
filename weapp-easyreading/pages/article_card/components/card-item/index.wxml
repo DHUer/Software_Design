@@ -1,8 +1,37 @@
-<view class="mp-swipe-card-item">
+<scroll-view scroll-y="true" class="mp-swipe-card-item">
   <view bind:tap="handleTap" class="id-text">{{itemData.question}}</view>
 
-            <view class="feed-content">
+    <view class='feed-tail'>
 
+        <view class="art-more">
+
+            <view class="left">
+                <view class="art-tag">
+                    <text class="tag">四级</text>
+                    <text class="tag">生活</text>
+                </view>
+            </view>
+
+            <view class="right">
+                <view class="book">
+                    <image src="../../../../images/book.png"></image>
+                    <text>500词 </text>
+                </view>
+                <view class="watch">
+                    <image src="../../../../images/eye.png"></image>
+                    <text>3316</text>
+                </view>
+                <view class="comment">
+                    <image src="../../../../images/star.png"></image>
+                    <text>27  </text>
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+
+    <view class="feed-content">
             <view class="avatar flex-item">
                        <image src="{{itemData.feed_source_img}}"></image>
                   </view>
@@ -11,37 +40,8 @@
                     <a class="">
                        {{itemData.answer_ctnt}}
                         </a>
-                  
+
                 </view>
 </view>
 
-<view class='feed-tail'>
-
-<view class="art-more">
-
-<view class="left">
-              <view class="art-tag">
-                <text class="tag">四级</text>
-                <text class="tag">生活</text>
-               </view>
-               </view>
-
-<view class="right">
-                    <view class="book">
-                        <image src="../../../../images/book.png"></image>
-                        <text>500词 </text>
-                    </view>
-                    <view class="watch">
-                        <image src="../../../../images/eye.png"></image>
-                        <text>3316</text>
-                    </view>
-                    <view class="comment">
-                        <image src="../../../../images/star.png"></image>
-                        <text>27  </text>
-                    </view>
-</view>
-                
-      </view>
-
-            </view>
-</view>
+</scroll-view>

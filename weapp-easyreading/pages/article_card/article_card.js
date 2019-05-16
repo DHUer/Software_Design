@@ -24,7 +24,7 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    
+
   },
   onLoad: function () {
     var that = this
@@ -38,7 +38,7 @@ Page({
     console.log(args)
   },
   getUserInfo: function(e) {
-    
+
   },
   getData: function () {
     var feed = util.getData2();
@@ -50,4 +50,9 @@ Page({
       feed_length: feed_data.length
     });
   },
+    bindItemTap: function() {
+        wx.navigateTo({
+            url: '../article/article'
+        })
+    },
 })

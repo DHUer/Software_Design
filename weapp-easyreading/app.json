@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/article_card/article_card",
     "pages/index/index",
     "pages/hot/hot",
     "pages/words/words",
     "pages/more/more",
     "pages/article/article",
     "pages/data_statistics/data_statistics",
-    "pages/article_card/article_card",
     "pages/article/wordDetails/wordDetails"
   ],
   "window": {
@@ -23,7 +23,7 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/article_card/article_card",
         "text": "",
         "iconPath": "images/read.png",
         "selectedIconPath": "images/read-fill.png"

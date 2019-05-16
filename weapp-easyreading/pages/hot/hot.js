@@ -1,4 +1,5 @@
 //discovery.js
+const $vm = getApp()
 var util = require('../../utils/util.js')
 Page({
   data: {
@@ -14,7 +15,9 @@ Page({
     interval: 5000,
     duration: 1000,
     feed: [],
-    feed_length: 0
+    feed_length: 0,
+      categoryTabs:[],
+      currentTab:0
   },
   onLoad: function () {
     console.log('onLoad')
@@ -38,6 +41,9 @@ Page({
       url: '../question/question'
     })
   },
+    manageTabs:function(){
+
+    },
   upper: function () {
     wx.showNavigationBarLoading()
     this.refresh();
@@ -86,5 +92,13 @@ Page({
       feed: this.data.feed.concat(next_data),
       feed_length: this.data.feed_length + next_data.length
     });
-  }
+  },
+    onShow(){
+        if($vm.globalData.categoryChanged){
+            $vm.utils.getCategorys().then(res => this.setData({
+                categoryTabs:res
+            }))
+            $vm.globalData.categoryChanged = false
+        }
+    }
 });

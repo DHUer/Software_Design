@@ -1,12 +1,11 @@
 .id-text {
   font-size: 50rpx;
-  padding: 10rpx;
+  padding: 15rpx;
 }
 
 .mp-swipe-card-item {
   height: 100%;
   width: 100%;
-  padding: 20rpx;
   /* background: linear-gradient(to right bottom, red, orange, green, purple); */
 }
 
@@ -20,11 +19,12 @@
 }
 
 .feed-content{
-  padding: 15rpx 0 0 0;
+    width: 300px;
+    margin:15px;
+    padding-top: 30px;
 }
 
 .feed-content .answer-body{
-  padding: 15rpx;
   /*height: 10rpx;*/
   font-size: 35rpx;
   line-height: 40rpx;
@@ -32,25 +32,24 @@
 }
 
 .feed-content .answer-body a{
+    margin-top: 10px;
    display: inline-block;
 }
 
 
 .feed-content .avatar{
-   width: 550rpx;
-    height: 340rpx; 
-    margin-left: 15px;
+   width: 300px;
+    height: 250px;
 }
 
 .feed-content .avatar image{
-    width: 550rpx;
-    height: 340rpx;
-    border-radius: 10rpx;
+    width: 300px;
+    height: 250px;
+    border-radius: 15rpx;
 }
 .feed-tail{
-  bottom: 0px;
   display: flex;
-  position: fixed;
+  position: absolute;
 }
 
 .feed-tail .art-more .art-tag .tag{
@@ -66,13 +65,13 @@
 
 
 .feed-tail .art-more{
-    margin-top:10px;
     height: 60rpx;
+    padding-top: 20px;
 }
- 
+
 .feed-tail .art-more view{
     display: inline-block;
-    margin: 0 10rpx 0 0;
+    margin: 0 10rpx 15rpx 0;
 }
 
 .feed-tail .art-more image{

@@ -23,9 +23,9 @@
         </view>
 
         <view class="answer-body flex-wrp" bindtap="bindItemTap">
-          <a class="">
-            <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
-          </a>
+          <view class="answer-txt" >
+            <text aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+          </view>
           <view class="avatar flex-item">
             <image src="{{item.feed_source_img}}"></image>
           </view>
