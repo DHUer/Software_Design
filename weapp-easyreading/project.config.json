@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx821f0a6b9a6c5b3e",
+	"appid": "wx41856ae611c357a3",
 	"projectname": "weapp-easyreading",
 	"debugOptions": {
 		"hidedInDevtools": []

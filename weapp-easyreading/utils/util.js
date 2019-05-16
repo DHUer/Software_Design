@@ -21,6 +21,7 @@ module.exports = {
 };
 
 var index = require('../data/data_index.js')
+//var index = require('../data/data_test.js')
 var index_next = require('../data/data_index_next.js')
 var discovery = require('../data/data_discovery.js')
 var discovery_next = require('../data/data_discovery_next.js')
@@ -46,7 +47,14 @@ function getData(url){
 }
 
 function getData2(){
+  wx.request({
+    url: 'http://127.0.0.1:8000/index/',
+    success: function(res){
+      
+    }
+  })
   return index.index;
+  console.log(index.index);
 }
 
 function getNext(){

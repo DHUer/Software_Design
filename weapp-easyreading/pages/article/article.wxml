@@ -1,57 +1,62 @@
-<!--answer.wxml-->
+<!-- answer.wxml -->
 <view class="container">
-    <view class="title" bindtap="toQuestion">
-        <text class="question-title">选择 Kindle 而不是纸质书的原因是什么？</text>
-    
-    <view class="art-more">
-     <view class="date">2019-5-5</view>
-      <view class="right">
-      <view class="art-tag">
-          <text class="tag">四级</text>
-          <text class="tag">生活</text>
+    <view class="title">
+        <text class="question-title">{{passageTitle}}</text>
+        <view class="art-more">
+            <view class="date">{{publishTime}}</view>
+            <view class="right">
+                <view class="art-tag">
+                    <text class="tag">{{passageLevel}}</text>
+                    <text class="tag">{{passageLable}}</text>
+                </view>
+                <view class="book">
+                    <image src="../../images/book.png"></image>
+                    <text>{{wordCounts}}</text>
+                </view>
+            </view>
         </view>
-        <view class="book">
-           <image src="../../images/book.png"></image>
-           <text>500词 </text>
-        </view>
-    </view>
-    
     </view>
 </view>
 
-    <view class="answer-content">
-     <image src="../../images/1444983318907-_DSC1826.jpg"></image>
-        <text>难道不明白纸质书更贵啊！！！
-
-            若觉得kindle更贵，我觉得要么阅读量太少，那确实没有买kindle的必要。要么买的都是盗版的纸质书？我不清楚不加以评论。。。
-
-            另外，用kindle看小说的怎么真心不懂了。题主不看小说么？难道题主拿来看教科书还是技术文档？还是题主觉得小说就是小时代内样的？（对小时代没偏见，尊重多样性）
-
-            而且纸质书搬起来真心困难啊！当初毕业带不回来，忍痛卖了不少好桑心！
-
-            碎片时间阅读总不能天天背着一本书吧，那么占地方。
-
-            看到描述最后一段，感觉有骗答案的嫌疑
-
-        </text>
-        <image src="../../images/1444983318907-_DSC1826.jpg"></image>
-        <text>
-            难道不明白纸质书更贵啊！！！
-
-            若觉得kindle更贵，我觉得要么阅读量太少，那确实没有买kindle的必要。要么买的都是盗版的纸质书？我不清楚不加以评论。。。
-
-            另外，用kindle看小说的怎么真心不懂了。题主不看小说么？难道题主拿来看教科书还是技术文档？还是题主觉得小说就是小时代内样的？（对小时代没偏见，尊重多样性）
-
-            而且纸质书搬起来真心困难啊！当初毕业带不回来，忍痛卖了不少好桑心！
-
-            碎片时间阅读总不能天天背着一本书吧，那么占地方。
-
-            看到描述最后一段，感觉有骗答案的嫌疑
-
-        </text>
-
-        <view class="over"><text class="iconfont icon-dagou"></text>已读</view>
-        <view class="over"><text class="iconfont icon-Star"></text>收藏</view>
+<view class="arrange">
+    <view wx:for="{{passageArray}}" wx:key="" data-text="{{item}}" data-text="{{item}}" bindtap="popUp" hover-class='hover'>
+        <text style='margin-left: 10px;word-break:break-all;'>{{item}}</text>
     </view>
-
 </view>
+<image src="../../images/1444983318907-_DSC1826.jpg"></image>
+
+
+<view class='close_icon' wx:if="{{showModal}}">
+    <text class="iconfont icon-close" bindtap='closeWindow'></text>
+</view>
+<view class="modalDlg" wx:if="{{showModal}}">
+    <view class="result" wx:if="{{result.basic!=null}}">
+        <view class='head_arrange'>
+            <text class="wordtext " bindtap="audioPlay">{{result.query}}</text>
+            <text class="iconfont icon-horn" style='color:rgb(116, 171, 30); margin:15px;font-size:25px' bindtap="audioPlay"></text>
+        </view>
+        <audio src="http://dict.youdao.com/speech?audio={{result.query}}" id="myAudio"></audio>
+        <view wx:if="ukPhonetic != null">
+            <text class="phonetic" bindtap="audioPlay">[英][{{ukPhonetic}}]</text>
+            <text class="phonetic" bindtap="audioPlay">[美][{{usPhonetic}}]</text>
+        </view>
+        <view>
+            <text class='phonetic' wx:for="{{result.basic.exam_type}}">{{item}}</text>
+        </view>
+        <scroll-view scroll-y="true" class="paraphrase_box">
+            <view class="paraphrase" wx:for="{{result.basic.explains}}" wx:key="index" wx:for-item="item" wx:if="{{index<3}}">
+                {{item}}
+            </view>
+        </scroll-view>
+    </view>
+    <view class="result" wx:elif="{{result.basic==null}}">No such words</view>
+</view>
+<view class='operations' wx:if="{{showModal}}">
+    <view style='margin:10px' bindtap='detailListener'>
+        <text class="iconfont icon-visible" style='font-size:15px;'>查看详解</text>
+    </view>
+    <view style='margin-left:130px;margin-top:10px; '>
+        <text class="iconfont icon-increase" style='font-size:15px;'>添加到单词本</text>
+    </view>
+</view>
+<audio src="{{src}}" id="myAudio"></audio>

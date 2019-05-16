@@ -20,7 +20,7 @@ Page({
     this.getData();
   },
   upper: function () {
-    wx.showNavigationBarLoading()
+    wx.showNavigationBarLoading()//显示加载条动画
     this.refresh();
     console.log("upper");
     setTimeout(function(){wx.hideNavigationBarLoading();wx.stopPullDownRefresh();}, 2000);
@@ -31,10 +31,7 @@ Page({
     setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
     console.log("lower")
   },
-  //scroll: function (e) {
-  //  console.log("scroll")
-  //},
-
+  
   //网络请求数据, 实现首页刷新
   refresh0: function(){
     var index_api = '';
@@ -47,10 +44,12 @@ Page({
         });
   },
 
-  //使用本地 fake 数据实现刷新效果
+  //向服务器发送请求更新数据
   getData: function(){
     var feed = util.getData2();
+    
     console.log("loaddata");
+
     var feed_data = feed.data;
     this.setData({
       feed:feed_data,
@@ -63,6 +62,7 @@ Page({
       icon: 'loading',
       duration: 3000
     });
+    
     var feed = util.getData2();
     console.log("loaddata");
     var feed_data = feed.data;
@@ -103,5 +103,5 @@ Page({
     },3000)
   }
 
-
+  
 })

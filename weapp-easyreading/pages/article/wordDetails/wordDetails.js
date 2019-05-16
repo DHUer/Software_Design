@@ -84,14 +84,7 @@ Page({
           pron_audio: res.data.data.audio_addresses,
           definition: res.data.data.definition,
         })
-        /*
-        console.log(res)
-        const innerAudioContext = wx.createInnerAudioContext()
-        innerAudioContext.autoplay = true
-        innerAudioContext.src = res.data.data.audio_addresses.uk[0]
-        innerAudioContext.onPlay(() => {
-        })
-        */
+        
         var id = res.data.data.conent_id
         that.liju(id)
       },

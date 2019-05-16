@@ -6,7 +6,8 @@
     "pages/more/more",
     "pages/article/article",
     "pages/data_statistics/data_statistics",
-    "pages/article_card/article_card"
+    "pages/article_card/article_card",
+    "pages/article/wordDetails/wordDetails"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,41 +1,15 @@
-
-<view class="container chat">
-
-  <view class="chat-item">
-   
+<view class="container chat" >
+  <view class="chat-item" wx:for="{{wordList}}" >
     <view class="chat-content">
       <view class="chat-source">
-      
-        <text class="chatmate iconfont icon-Sound">   Alex</text>
-        <text class="pronounce">/yinbiao/</text>
+        <text class="chatmate iconfont icon-Sound">{{item}}</text>
+        <text class="pronounce">/ddd/</text>
       </view>
       <view class="tag">释义</view>
       <text class="chat-txt">你好~ 你好~ 你好~你好~ 你好~ 你好~你好~ 你好~ 你好~你好~ 你好~ 你好~</text>
     </view>
-  <view class="more">
-    <view class="delete">
-     移出
-  </view>
-  </view>
-  </view>
-
-  <view class="chat-item ">
-    <view class="chat-content">
-      <view class="chat-source">
-        <text class="chatmate iconfont icon-Sound">  George</text>
-        <text class="pronounce">/yinbiao/</text>
-      </view>
-
-      <view class="tag flex-item">释义</view>
-      <text class="chat-txt">你好~ 你好~ 你好~</text>
-    </view>
     <view class="more">
-    <view class="delete">
-     移出
+      <view class="delete">移出</view>
+    </view>
   </view>
-  </view>
-  </view>
-
 </view>
-
-

@@ -75,6 +75,7 @@
     border: solid 1px #ebebeb;
     border-radius: 3px;
     box-shadow: 4px 4px 10px #bebebe;
+    
 }
 .answerer .avatar {
     flex: 1;
