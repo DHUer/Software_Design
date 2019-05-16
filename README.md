@@ -12,10 +12,14 @@ Course Project of Software Engineering
   
 * 小程序登录、获取用户信息、openid和unionid详解
   https://www.daguanren.cc/post/wxlogin_getuserinfo_openid_unionid.html
+=======
 
 * 保持登陆状态具体解决办法
   https://www.cnblogs.com/gdutzyh/p/7251432.html
-  
+
+  https://www.jianshu.com/p/2af0d2e9f375
+
+  http://djangobook.py3k.cn/2.0/chapter14/
   
 ### 功能点
 

@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    wordList: null,
+    
+    
   },
 
   /**
@@ -19,8 +21,8 @@ Page({
     var that = this;
     that.setData({
       wordList: ["word", "how", "this", "new"]
-    })
-    console.log(">>>>>>");
+    });
+
   },
 
   /**

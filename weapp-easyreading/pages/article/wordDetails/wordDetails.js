@@ -109,14 +109,7 @@ Page({
       console.log(res.errCode)
     })
   },
-
-  //更多例句触发函数
-  moredefen: function() {
-
-    this.setData({
-      more: !(this.data.more)
-    })
-  },
+  
   //触发例句函数
   liju(id) {
     var that = this
