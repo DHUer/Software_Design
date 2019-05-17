@@ -279,3 +279,7 @@
   content: "\e6a2";
 }
 
+.icon-DeleteFilled:before {
+  content: "\e646";
+}
+

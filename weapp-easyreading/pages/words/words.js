@@ -72,5 +72,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 跳转到对应的单词列表界面
+   */
+  toWordList: function(){
+    wx.navigateTo({
+      url: "./wordList/wordList"
+    })
   }
 })

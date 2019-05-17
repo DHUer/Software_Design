@@ -3,6 +3,26 @@ page{
   background-color: rgb(233, 240, 235)
 }
 
+.count_day{
+   margin: 2%;
+   border-radius: 5px;
+   width: 96%;
+   height: 200rpx;
+   display: flex;
+   flex-direction: row;
+   background-image: url(http://static.simpledesktops.com/uploads/desktops/2014/10/31/winter-moutains-01.png.625x385_q100.png);
+   background-repeat: round;
+}
+
+.qiandao_chishu{
+   margin: 10%;
+   width: 45%;
+   text-align: center;
+   color: slategray;
+   display: flex;
+   flex-direction: column;
+}
+
 .job_day{
   margin: 2%;
  border-radius: 5px;
@@ -10,7 +30,8 @@ page{
   height: 400rpx;
   display: flex;
   flex-direction: column;
-  background-image: url(https://img.freepik.com/free-photo/green-shade-abstract-watercolor-art-hand-paint-background_23-2148055449.jpg?size=626&ext=jpg);
+
+  background-image: url(http://static.simpledesktops.com/uploads/desktops/2016/12/06/Christmas_Trees.png.625x385_q100.png);
   /*
   background-image: url(https://picture-1256429518.cos.ap-chengdu.myqcloud.com/blog/wxbg2.jpg);
  */
@@ -18,12 +39,14 @@ page{
  opacity: 0.8;
 }
 
+
+
 .day_num{
   width: 100%;
-  margin-top: 100rpx;
+  margin-top: 300rpx;
   font-size: 150rpx;
-  text-align: center;
-  color: red;
+  text-align: left;
+  color: rgb(192, 190, 190);
   font-weight: 800;
  
 }
@@ -31,43 +54,24 @@ page{
 .day_notice{
   width: 100%;
   font-size: 25rpx;
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 700;
+  text-align: left;
+  margin-left: 2%;
+  font-weight: 500;
   color: black
 }
 
+.btn{
+   width: 60%;
+   height: 50px;
+   background-color:#FFF;
+   color:rgba(7, 99, 34, 0.877);
+   border-radius: 50px;
+   box-shadow:3px 3px 3px 3px rgba(121, 115, 115, 0.445);
+   font-weight: 500;
+}
 
-.word_num{
-  margin: 2%;
-  border-radius: 5px;
-   width: 96%;
-   height: 150rpx;
-   display: flex;
-   flex-direction: row;
-   background-color:white;
-   border-top: 7px solid ghostwhite;
-   justify-content: space-around;
-   font-weight: 400;
-   color: #515151;
-}
-.today_word_num{
-   font-size: 16 px;
-   text-align: center;
-   font-weight: 800;
-}
-.new_word_num{
-   font-size: 16 px;
-   text-align: center;
-   font-weight: 800;
-}
-.lest_num{
-   font-size: 16 px;
-   text-align: center;
-   font-weight: 800;
-}
-.my_word_num{
-   font-size: 16 px;
-   text-align: center;
-   font-weight: 800;
+.words_hover{
+   background-color: antiquewhite;
+   opacity: 0.9;
+   transform: scale(0.8);
 }

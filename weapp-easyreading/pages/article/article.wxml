@@ -19,7 +19,7 @@
 </view>
 
 <view class="arrange">
-    <view wx:for="{{passageArray}}" wx:key="" data-text="{{item}}" data-text="{{item}}" bindtap="popUp" hover-class='hover'>
+    <view wx:for="{{passageArray}}" wx:key="" data-text="{{item}}" data-text="{{item}}" bindtap="popUp" hover-class='hover' >
         <text style='margin-left: 10px;word-break:break-all;'>{{item}}</text>
     </view>
 </view>
