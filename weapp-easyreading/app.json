@@ -3,6 +3,7 @@
     "pages/article_card/article_card",
     "pages/index/index",
     "pages/hot/hot",
+    "pages/hot/manage/manage",
     "pages/words/words",
     "pages/more/more",
     "pages/article/article",

@@ -42,7 +42,9 @@ Page({
     })
   },
     manageTabs:function(){
-
+        wx.navigateTo({
+            url: 'manage/manage'
+        })
     },
   upper: function () {
     wx.showNavigationBarLoading()
@@ -95,7 +97,7 @@ Page({
   },
     onShow(){
         if($vm.globalData.categoryChanged){
-            $vm.utils.getCategorys().then(res => this.setData({
+            util.getCategorys().then(res => this.setData({
                 categoryTabs:res
             }))
             $vm.globalData.categoryChanged = false

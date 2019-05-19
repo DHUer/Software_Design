@@ -47,7 +47,7 @@
   position: relative;
 }
 .sv__container{
-  width: 18rem;
+  width: 21rem;
   height: 64rpx;
   white-space: nowrap;
 }

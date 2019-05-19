@@ -113,14 +113,8 @@ module.exports = {
         "lanmu_menu": 0,
         "lanmu_custom": 0,
         "lanmu_json": "/V2/news/list.html?chid=11"
-    }, {
-        "lanmu_id": 48,
-        "lanmu_name": "徽商",
-        "lanmu_order": 16,
-        "lanmu_menu": 0,
-        "lanmu_custom": 0,
-        "lanmu_json": "/V2/news/list.html?chid=48"
-    }, {
+    },
+        {
         "lanmu_id": 112,
         "lanmu_name": "理论",
         "lanmu_order": 17,
