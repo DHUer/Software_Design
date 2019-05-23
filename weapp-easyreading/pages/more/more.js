@@ -17,9 +17,9 @@ Page({
      // url: '../data_statistics/data_statistics'
     })
   },
-  bindTocards: function () {
+  bindToTest: function () {
     wx.navigateTo({
-      url: '../article_card/article_card'
+      url: '../wordstest/wordstest'
     })
   },
   onLoad: function () {

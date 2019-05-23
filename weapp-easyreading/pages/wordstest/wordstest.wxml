@@ -1,0 +1,62 @@
+<view wx:if="{{!(complete)}}" clas="page">
+
+<view  class="job_day">
+  <text class="iconfont icon-meh"  wx:if="{{!(ans)&&yes}}" style='float:center'></text>
+  <text class="iconfont icon-smile" wx:if="{{ans&&yes}}" style='float:center'></text>
+
+<!--单词释义-->
+  <view class="day_num">{{title}}</view>
+</view>
+<!--<!--答对数量-->
+<!-- <view class="num_notice">{{true_num}}</view>
+
+ <!--单词选择-->
+<view wx:if="{{!(showDaan)}}" class="content">
+   <view class="project" bindtap="choice" id="{{da4}}">
+      <text class="word-miss" >{{da4}}</text>
+    </view>
+    <view class="project" bindtap="choice" id="{{da3}}" >
+      <text class="word-miss">{{da3}}</text>
+    </view>
+        <view class="project" bindtap="choice" id="{{da2}}" >
+      <text class="word-miss" >{{da2}}</text>
+    </view>
+        <view class="project" bindtap="choice" id="{{da1}}" >
+      <text class="word-miss" >{{da1}}</text>
+    </view>
+</view>
+
+<!--显示答案-->
+<view wx:if="{{showDaan}}" class="content" >
+       <view class="button-5" bindtap="choice" id="{{da1}}">
+      <text class="word-miss" >{{true_word}}</text>
+    </view>
+
+   <view wx:if="{{daan}}" class="button-6" bindtap="choice" id="{{da1}}">
+      <text class="word-miss" >回答正确</text>
+    </view>
+
+       <view wx:if="{{!(daan)}}" class="button-7" bindtap="choice" id="{{da1}}">
+      <text class="word-miss" >回答错误</text>
+    </view>
+
+       <view wx:if="{{!(complete)}}" class="button-8" bindtap="next" >
+      <text class="word-miss" >下一个</text>
+    </view>
+
+
+</view>
+</view>
+<view class='chartcontainer' wx:if="{{complete}}">
+ <view>
+     <canvas canvas-id="ringCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+
+    <view class="title">
+		<view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
+		{{chartTitle}}
+	</view>
+    <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <view style="text-align:center">点击数据每一项查看详情</view>
+
+</view>
