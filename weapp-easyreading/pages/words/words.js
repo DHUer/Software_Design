@@ -80,5 +80,6 @@ Page({
     wx.navigateTo({
       url: "./wordList/wordList"
     })
+    
   }
 })
