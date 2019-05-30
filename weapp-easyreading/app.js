@@ -2,6 +2,7 @@
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
+    var that = this
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -9,23 +10,19 @@ App({
     //这一步用来保存用户的openID和sessionID
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // 发送 res.code 到后台换取 unionId
+        wx.setStorageSync('code', res.code)
         wx.request({
-          url:'192.168.1.103',
+          url:'http://192.168.1.105:8000/news/createUser',
           data:{
-            code: res.code
+            code: wx.getStorageSync('code')
           },
-          sucess: function(res){
-            //保存用户的信息到本地缓存之后每次都携带该openID和sessionID
-            setStorage({
-              openID: res.openID,
-              sessionID: res.sessionID
-            })
+          success: function(respd){
+            wx.setStorageSync('uid', respd.data)
           }
         })
       }
     })
-    console.log(getStorage('openID'))
   },
   
   getUserInfo:function(cb){

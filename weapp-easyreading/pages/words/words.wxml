@@ -15,5 +15,5 @@
     <view class="day_notice">复习进度</view>
     <progress percent="30" show-info color="#09BB07" active />
   </view>
-  <button  bindtap="toWordList" class="btn" hover-class="words_hover">复习单词</button>
+  <button  bindtap="toWordList" class="btn" hover-class="words_hover">单词列表</button>
 </view>

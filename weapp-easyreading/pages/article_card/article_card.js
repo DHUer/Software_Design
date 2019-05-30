@@ -42,9 +42,9 @@ Page({
   },
   getData: function () {
     var feed = util.getData2();
-    console.log("loaddata");
+    //console.log("loaddata");
     var feed_data = feed.data;
-    console.log(feed_data)
+    //console.log(feed_data)
     this.setData({
       feed: feed_data,
       feed_length: feed_data.length

@@ -6,8 +6,6 @@ Page({
    */
   data: {
     wordList: null,
-    
-    
   },
 
   /**
@@ -18,11 +16,14 @@ Page({
     /*
     "wordList":["danci1","danci2"]
     */
-    var that = this;
+    var that = this
     that.setData({
-      wordList: ["word", "how", "this", "new"]
-    });
-
+      wordList: ["word", "how", "this", "new", "we", "like", "you"]
+    })
+    //console.log(this.data.wordList)
+    var wordInfo = new Array()
+    that.getAllInfo(that.data.wordList, wordInfo)
+    //console.log(wx.getStorageSync('vocabulary'))
   },
 
   /**
@@ -76,10 +77,41 @@ Page({
   /**
    * 跳转到对应的单词列表界面
    */
-  toWordList: function(){
+  toWordList: function () {
     wx.navigateTo({
       url: "./wordList/wordList"
     })
-    
+  },
+  getWords: function(word){
+    return new Promise(function(resolve, reject){
+      wx.request({
+        url:'https://api.shanbay.com/bdc/search/?word=' + word,
+        method: 'GET',
+        success: function(res) {
+          resolve(res)
+        },
+        fail: function(){reject()}
+      })
+    })
+  },
+  getAllInfo: function(queryWordsList,wordInfo){
+    //对所有单词信息进行请求来保证同步
+    var that = this
+    for(var i=0, len=queryWordsList.length; i<len; i++){
+      that.getWords(queryWordsList[i]).then(function (value){
+        console.log(value.data.data)
+        var temp = value.data.data
+        wordInfo.push(
+          {
+            phonetic: temp.pronunciation,
+            paraphrase: temp.definition,
+            wordId: temp.content,
+            audio: temp.audio
+          }
+        )
+        wx.setStorageSync('vocabulary', wordInfo)
+      }, function (error){
+      })
+    }
   }
 })

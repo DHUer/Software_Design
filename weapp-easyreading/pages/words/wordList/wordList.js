@@ -11,9 +11,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      vocabulary: wx.getStorageSync('vocabulary')
+    })
+    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -61,5 +64,25 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  audioPlay: function(e){
+    const innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = e.target.id
+    innerAudioContext.onPlay(() => {})
+    innerAudioContext.onError((res) => {
+      console.log(res.errMsg)
+      console.log(res.errCode)
+    })
+  },
+
+  /**
+   * 处理单词删除逻辑
+   */
+  deleteWord: function(e){
+    wx.request({
+      
+    })
   }
 })

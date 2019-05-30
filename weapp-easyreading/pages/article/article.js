@@ -12,18 +12,6 @@ Page({
   },
   
   onLoad: function () {
-    /*
-    需要的数据格式：
-    "data":{
-      "passageTitle": "This is the new word"",
-      "publishTime": "xxx",
-      "passageArray": ["xxx","xxx","xxx"],
-      "passageLevel": "CET-4",
-      "wordCounts": 123,
-      "favoriteCounts": 12223
-    }
-    */
-
     var that = this;
     //sample data
     that.setData({
@@ -100,7 +88,7 @@ Page({
           showModal: true,
           result: response.data
         });
-        console.log(that.data.result);
+        console.log(response);
         //这里有可能因为查询结果为词组所以没有音标
         if("basic" in response.data){
           if("uk-phonetic" in response.data.basic) {

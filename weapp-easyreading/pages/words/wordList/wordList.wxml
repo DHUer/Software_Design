@@ -1,22 +1,21 @@
 <!-- pages/words/wordList/wordList.wxml -->
-<view class="back">
+<view class="back" wx:for="{{vocabulary}}">
     <view class="card">
-        <view class="head">
-            <text class="iconfont icon-horn" style='color:rgb(116, 171, 30); margin:15px;font-size:25px' bindtap="audioPlay"></text>
-            <text style="font-size: 25px;font-weight: 500;margin:10px">dddd</text>
-            <text style="font-size: 20px;font-weight: 300;margin:12px; text-align:center;">/'sister/</text>
+        <view class="head" bindtap="audioPlay" id="{{item.audio}}">
+            <text class="iconfont icon-horn" style='color:rgb(116, 171, 30); margin:15px;font-size:25px' bindtap="audioPlay" id="{{item.audio}}"></text>
+            <text style="font-size: 25px;font-weight: 500;margin:10px" bindtap="audioPlay" id="{{item.audio}}">{{item.wordId}}</text>
+            <text style="font-size: 20px;font-weight: 300;margin:12px; text-align:center;" bindtap="audioPlay" id="{{item.audio}}">/{{item.phonetic}}/</text>
         </view>
         <view class="paraphrase_content">
             <view class="paraphrase_content_shiyi">释义</view>
             <view class="paraphrase_content_zhongwen">
-                <text style="color: grey; font-weight: 350; margin-left: 10px;">n.姐,妹妹</text>
-                <text style="color: grey; font-weight: 350; margin-left: 10px;">n.姐,妹妹</text>
+                <text style="color: grey; font-weight: 350; margin-left: 10px;">{{item.paraphrase}}</text>
             </view>
         </view>
         <view class="single_line"></view>
         <view class="bottom_content">
             <view>May 9,2019</view>
-            <view>
+            <view bindtap="deleteWord" id="{{item.wordId}}">
                 移除
                 <text class="iconfont icon-DeleteFilled" style='font-size:17px; color:rgb(116, 171, 30)'></text>
             </view>

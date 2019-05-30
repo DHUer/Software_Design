@@ -14,7 +14,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx41856ae611c357a3",
+	"appid": "wxeedde669ced59b3b",
 	"projectname": "weapp-easyreading",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -31,13 +31,24 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "12",
+					"pathName": "pages/words/words",
+					"scene": null
+				}
+			]
 		}
 	}
 }
