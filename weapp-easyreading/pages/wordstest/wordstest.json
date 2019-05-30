@@ -1,4 +1,7 @@
 {
   "backgroundTextStyle": "light",
-  "navigationBarTitleText": "词汇测试"
+  "navigationBarTitleText": "词汇测试",
+  "usingComponents": {
+    "w-indicator": "../../components/w-activity-indicator/index"
+  }
 }

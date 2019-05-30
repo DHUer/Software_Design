@@ -1,5 +1,5 @@
 <scroll-view scroll-y="true" class="mp-swipe-card-item">
-  <view bind:tap="handleTap" class="id-text">{{itemData.question}}</view>
+  <view bind:tap="handleTap" class="id-text">{{itemData.title}}</view>
 
     <view class='feed-tail'>
 
@@ -7,8 +7,8 @@
 
             <view class="left">
                 <view class="art-tag">
-                    <text class="tag">四级</text>
-                    <text class="tag">生活</text>
+                    <text class="tag">tag1</text>
+                    <text class="tag">tag2</text>
                 </view>
             </view>
 
@@ -38,7 +38,7 @@
 
                 <view class="answer-body" bindtap="bindItemTap">
                     <a class="">
-                       {{itemData.answer_ctnt}}
+                       {{itemData.content}}
                         </a>
 
                 </view>

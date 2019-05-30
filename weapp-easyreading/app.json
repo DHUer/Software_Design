@@ -5,9 +5,10 @@
     "pages/hot/hot",
     "pages/hot/manage/manage",
     "pages/words/words",
-    "pages/more/more",
     "pages/article/article",
+    "pages/more/more",
     "pages/wordstest/wordstest",
+    "pages/wordstest/res/res",
     "pages/data_statistics/data_statistics",
     "pages/article/wordDetails/wordDetails",
     "pages/words/wordList/wordList"

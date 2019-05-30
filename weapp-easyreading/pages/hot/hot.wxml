@@ -12,7 +12,7 @@
             </view>
         </block>
     </scroll-view>
-    <image bindtap="manageTabs" class="sv-manager" src="../../images/icon-manage.png"></image>
+    <image class="sv-manager" src="../../images/icon-manage.png"></image>
 </view>
 
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">

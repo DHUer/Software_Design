@@ -14,7 +14,7 @@ Page({
   },
   bindTodatasta:function(){
     wx.navigateTo({
-     // url: '../data_statistics/data_statistics'
+      url: '../data_statistics/data_statistics'
     })
   },
   bindToTest: function () {

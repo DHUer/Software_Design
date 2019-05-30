@@ -2,10 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01964dd5-bbb2-4982-8dad-36cf2405e78a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../lib/cet4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/cet6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/gaozhong.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/gre.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/ielts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/kaoyan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/toefl.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article_card/article_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article_card/article_card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article_card/article_card.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article_card/article_card.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/article_card/components/card-item/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/article_card/components/card-item/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/hot/hot.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/hot/hot.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/more/more.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/more/more.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/more/more.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/more/more.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wordstest/res/res.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wordstest/res/res.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wordstest/res/res.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wordstest/res/res.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wordstest/wordstest.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wordstest/wordstest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wordstest/wordstest.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wordstest/wordstest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wordstest/wordstest.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wordstest/wordstest.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wordstest/wordstest.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wordstest/wordstest.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/wxcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/wxcharts.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,19 +40,19 @@
     <session id="109642447">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="21" />
+          <entry key="js" value="24" />
           <entry key="json" value="11" />
           <entry key="wxml" value="15" />
           <entry key="wxss" value="16" />
@@ -42,14 +62,14 @@
         <counts>
           <entry key="HTML" value="14" />
           <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="21" />
+          <entry key="JavaScript" value="24" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Wxss" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="81" />
+          <entry key="js" value="1485" />
           <entry key="json" value="71" />
           <entry key="wxml" value="146" />
           <entry key="wxss" value="777" />
@@ -59,7 +79,7 @@
         <counts>
           <entry key="HTML" value="146" />
           <entry key="JSON" value="71" />
-          <entry key="JavaScript" value="81" />
+          <entry key="JavaScript" value="1485" />
           <entry key="Wxss" value="777" />
         </counts>
       </usages-collector>
@@ -67,36 +87,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/hot/manage/manage.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/hot/manage/manage.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/hot/manage/manage.wxss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils/wxcharts.js">
+        <entry file="file://$PROJECT_DIR$/pages/wordstest/wordstest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="1596">
+              <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/article_card/article_card.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/util.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="905">
+              <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -115,6 +128,10 @@
       <find>head</find>
       <find>cate</find>
       <find>active</find>
+      <find>sear</find>
+      <find>onrea</find>
+      <find>com</find>
+      <find>corre</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,7 +151,6 @@
         <option value="$PROJECT_DIR$/pages/hot/hot.wxss" />
         <option value="$PROJECT_DIR$/pages/more/more.wxml" />
         <option value="$PROJECT_DIR$/utils/Promise.js" />
-        <option value="$PROJECT_DIR$/utils/util.js" />
         <option value="$PROJECT_DIR$/pages/hot/hot.wxml" />
         <option value="$PROJECT_DIR$/utils/category.js" />
         <option value="$PROJECT_DIR$/app.json" />
@@ -143,6 +159,8 @@
         <option value="$PROJECT_DIR$/pages/hot/manage/manage.js" />
         <option value="$PROJECT_DIR$/pages/hot/manage/manage.wxml" />
         <option value="$PROJECT_DIR$/pages/hot/manage/manage.wxss" />
+        <option value="$PROJECT_DIR$/utils/util.js" />
+        <option value="$PROJECT_DIR$/pages/wordstest/wordstest.js" />
       </list>
     </option>
   </component>
@@ -153,8 +171,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="123" />
+    <option name="y" value="116" />
     <option name="width" value="1620" />
     <option name="height" value="920" />
   </component>
@@ -164,7 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,25 +192,19 @@
             <path>
               <item name="weapp-easyreading" type="b2602c69:ProjectViewProjectNode" />
               <item name="weapp-easyreading" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="weapp-easyreading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weapp-easyreading" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="weapp-easyreading" type="b2602c69:ProjectViewProjectNode" />
               <item name="weapp-easyreading" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="hot" type="462c0819:PsiDirectoryNode" />
+              <item name="article_card" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="weapp-easyreading" type="b2602c69:ProjectViewProjectNode" />
               <item name="weapp-easyreading" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="hot" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
+              <item name="wordstest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="weapp-easyreading" type="b2602c69:ProjectViewProjectNode" />
@@ -204,6 +215,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,11 +252,12 @@
       <workItem from="1558244786881" duration="5185000" />
       <workItem from="1558415454114" duration="79000" />
       <workItem from="1558509882045" duration="602000" />
+      <workItem from="1559211720400" duration="8423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18141000" />
+    <option name="totallyTimeSpent" value="26564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -371,13 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/article_card/article_card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="57" column="2" selection-start-line="57" selection-start-column="2" selection-end-line="57" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/Promise.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21945">
@@ -389,13 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -437,6 +436,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/hot/manage/manage.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/hot/manage/manage.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -447,19 +453,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/hot/manage/manage.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/wxcharts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/article_card/article_card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="905">
+          <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/wordstest/wordstest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
         </state>
       </provider>
     </entry>

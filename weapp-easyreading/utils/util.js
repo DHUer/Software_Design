@@ -46,16 +46,60 @@ function getData(url){
     })
   })
 }
+//192.168.43.240
+function getArticles(){
+  var promise=new Promise((resolve,reject)=>{
+  wx.request({
+    url: 'http://localhost:8000/news/get_brief/',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    success: function (res) {
+      console.log("获取后端文章")
+      resolve(res)
+    },
+    fail: function (res) {
+      console.log("获取后端数据失败！")
+      reject(res.data)
+    }
+  })
+  });
+  return promise;
+}
+
+function getWords(){
+    const promise = new Promise((resolve, reject) => {
+        wx.request({
+            url: 'http://localhost:8000/news/get_test_words/',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (res) {
+                console.log("获取测试单词")
+                resolve(res)
+            },
+            fail: function (res) {
+                console.log("获取测试单词失败！")
+                reject(res.data)
+            }
+        })
+    });
+    return promise;
+}
 
 function getData2(){
   wx.request({
-    url: 'http://127.0.0.1:8000/index/',
+    url: 'http://192.168.43.240:8000/news/get_brief/',
     success: function(res){
+      console.log("获取后端数据")
+      console.log(res)
+    },
+    fail: function (res) {
 
     }
-  })
-  return index.index;
+  });
   console.log(index.index);
+  return index.index;
 }
 
 function getNext(){
@@ -99,6 +143,7 @@ module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
 module.exports.getCategorys=getCategorys;
 
-
+module.exports.getArticles = getArticles;
+module.exports.getWords=getWords;
 
 
