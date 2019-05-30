@@ -24,39 +24,26 @@
         <view class="project" bindtap="choice" id="{{da1}}" >
       <text class="word-miss" >{{da1}}</text>
     </view>
+     <view class="project" bindtap="unknown" >
+      <text class="word-miss" >不知道</text>
+    </view>
 </view>
 
-<!--显示答案-->
-<view wx:if="{{showDaan}}" class="content" >
-       <view class="button-5" bindtap="choice" id="{{da1}}">
-      <text class="word-miss" >{{true_word}}</text>
-    </view>
-
-   <view wx:if="{{daan}}" class="button-6" bindtap="choice" id="{{da1}}">
-      <text class="word-miss" >回答正确</text>
-    </view>
-
-       <view wx:if="{{!(daan)}}" class="button-7" bindtap="choice" id="{{da1}}">
-      <text class="word-miss" >回答错误</text>
-    </view>
-
-       <view wx:if="{{!(complete)}}" class="button-8" bindtap="next" >
-      <text class="word-miss" >下一个</text>
-    </view>
-
-
 </view>
+
+<view wx:if="{{lshow}}">
+ <w-indicator show text="Loading..." color='#35b59c' size="small" type="ball"  />
 </view>
+
 <view class='chartcontainer' wx:if="{{complete}}">
  <view>
-     <canvas canvas-id="ringCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+     <canvas canvas-id="ringCanvas" class="canvas" ></canvas>
     </view>
 
     <view class="title">
 		<view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
 		{{chartTitle}}
 	</view>
-    <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="toDetailwords"></canvas>
     <view style="text-align:center">点击数据每一项查看详情</view>
-
 </view>

@@ -47,6 +47,7 @@ App({
   },
   globalData:{
     userInfo:null,
-      categoryChanged:true
+    categoryChanged:true,
+    testList:[]
   }
 })

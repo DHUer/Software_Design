@@ -7,7 +7,7 @@
     <view class="placeholder-2"></view>
     <mp-swipe-card
       bind:click="handleClickCard"
-      push-list="{{feed}}"
+      push-list="{{articles}}"
       bind:swipeout="handleSwipeOut"
       generic:mp-swipe-card-item="card-item"
       bindtap="bindItemTap"

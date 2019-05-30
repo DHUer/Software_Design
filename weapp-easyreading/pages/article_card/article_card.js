@@ -3,24 +3,11 @@
 var util = require('../../utils/util.js')
 var app = getApp()
 
-const nameList = ['杀生丸殿下', '犬夜叉', '巫女桔梗', '日暮戈薇'];
-
-const generateItem = () => {
-  return {
-    id: Math.floor(Math.random() * 1000),
-    name: nameList[Math.floor(Math.random() * 3.99)],
-  }
-}
 Page({
   data: {
-    pushList: [
-      generateItem(),
-      generateItem(),
-      generateItem(),
-      generateItem()
-    ],
     feed: [],
-    feed_length: 0
+    articles:[],
+    art_length: 0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -29,7 +16,7 @@ Page({
   onLoad: function () {
     var that = this
     //调用应用实例的方法获取全局数据
-    this.getData();
+    that.getData();
   },
   handleSwipeOut(...args) {
     console.log(args)
@@ -41,13 +28,23 @@ Page({
 
   },
   getData: function () {
-    var feed = util.getData2();
-    //console.log("loaddata");
-    var feed_data = feed.data;
-    //console.log(feed_data)
-    this.setData({
-      feed: feed_data,
-      feed_length: feed_data.length
+    var that=this
+    util.getArticles().then(function(res){
+      console.log("loaddata");
+      var feed = res.data
+      var articles_data = feed;
+      console.log(articles_data)
+    /*  var a=[];
+      for(var i=0;i<feed.length;i++){
+        var obj=feed[i].fields
+        a.push(obj)
+      }*/
+      that.setData({
+     //   feed: articles_data,
+        articles:articles_data,
+        art_length: articles_data.length
+      });
+     
     });
   },
     bindItemTap: function() {
