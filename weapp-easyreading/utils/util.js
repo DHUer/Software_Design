@@ -136,6 +136,108 @@ function getCategorys(){
     })
 }
 
+
+
+
+function addToDict(word){
+  wx.request({
+    url:'http://localhost:8000/news/voca_book/' + 0 + '/' + wx.getStorageSync('uid') + '/' + word +'/',
+    success: function(resp){
+      wx.showToast({
+        title:"success",
+        icon:'success',
+        duration:1000,
+        mask:true
+      })
+      console.log(resp)
+    }
+  })
+}
+
+function getUserDict(){
+  return new Promise(function(resolve, reject){
+    wx.request({
+      url:'http://localhost:8000/news/voca_book/' + 2 + '/' + wx.getStorageSync('uid') + '/' + "word" +'/',
+      success: function(resp){
+        //console.log(resp)
+        var tempList = new Array()
+        for(let temp in resp.data){
+          tempList.push(temp)
+        }
+        wx.setStorageSync('wordList', tempList)
+        resolve(tempList)
+        
+      },
+      fail: function(resp){
+        reject(resp)
+      }
+    })
+  })
+}
+
+function deleteWord(word){
+  wx.request({
+    url: 'http://localhost:8000/news/voca_book/' + 1 + '/' + wx.getStorageSync('uid') + '/' + word + '/',
+    success: function(resp){
+      wx.showToast({
+        title:"success",
+        icon:'success',
+        duration:1000,
+        mask:true
+      })
+    },
+    fail: function(resp){
+      wx.showToast({
+        title:"failed",
+        image:'../images/ring.png',
+        duration:1000
+      })
+    }
+  })
+}
+function getWords_detail(word){
+  return new Promise(function(resolve, reject){
+    wx.request({
+      url:'https://api.shanbay.com/bdc/search/?word=' + word,
+      method: 'GET',
+      success: function(res) {
+        resolve(res)
+      },
+      fail: function(){reject()}
+    })
+  })
+}
+
+
+function updateWordInfo(){
+  return new Promise(function(resolve, reject){
+    getUserDict().then(function(value){
+      //console.log(wordList)
+      var wordInfo = new Array()
+      //console.log(value.length)
+      for(var i=0, len=value.length; i<len; i++){
+        getWords_detail(value[i]).then(function (value){
+          var temp = value.data.data
+          wordInfo.push(
+            {
+              phonetic: temp.pronunciation,
+              paraphrase: temp.definition,
+              wordId: temp.content,
+              audio: temp.audio,
+            }
+          )
+          wx.setStorageSync('vocabulary', wordInfo)
+        }, function (error){
+        })
+      }
+      //console.log(">>>>>>>>>>>>>>>>>")
+      //console.log(wx.getStorageSync('vocabulary'))
+      resolve(wx.getStorageSync('vocabulary'))
+    })
+  })
+}
+
+
 module.exports.getData = getData;
 module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
@@ -145,5 +247,7 @@ module.exports.getCategorys=getCategorys;
 
 module.exports.getArticles = getArticles;
 module.exports.getWords=getWords;
-
-
+module.exports.addToDict = addToDict;
+module.exports.getUserDict = getUserDict;
+module.exports.deleteWord = deleteWord;
+module.exports.updateWordInfo = updateWordInfo;

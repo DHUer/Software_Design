@@ -55,7 +55,7 @@
     <view style='margin:10px' bindtap='detailListener'>
         <text class="iconfont icon-visible" style='font-size:15px;'>查看详解</text>
     </view>
-    <view style='margin-left:130px;margin-top:10px; '>
+    <view style='margin-left:130px;margin-top:10px; ' bindtap='addToDict'>
         <text class="iconfont icon-increase" style='font-size:15px;'>添加到单词本</text>
     </view>
 </view>

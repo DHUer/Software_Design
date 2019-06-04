@@ -1,4 +1,5 @@
 // pages/words/wordList/wordList.js
+var util = require('../../../utils/util')
 Page({
 
   /**
@@ -12,8 +13,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    that.setData({
-      vocabulary: wx.getStorageSync('vocabulary')
+    util.updateWordInfo().then(function (value){
+      console.log(value)
+      that.setData({
+        vocabulary: value
+      })
     })
     
   },
@@ -81,8 +85,15 @@ Page({
    * 处理单词删除逻辑
    */
   deleteWord: function(e){
-    wx.request({
-      
+    var that = this
+    var word = e.currentTarget.id
+    util.deleteWord(word)
+    that.onLoad()
+  },
+  wordDetail: function(e){
+    var word = e.currentTarget.id
+    wx.navigateTo({
+      url: '../../article/wordDetails/wordDetails?wordBasic=' + word,
     })
   }
 })

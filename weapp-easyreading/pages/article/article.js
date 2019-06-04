@@ -111,5 +111,9 @@ Page({
     wx.navigateTo({
       url: './wordDetails/wordDetails?wordBasic=' + wordBasic,
     })
+  },
+  addToDict:function(){
+    var wordBasic = this.data.result.query
+    util.addToDict(wordBasic)
   }
 })

@@ -14,7 +14,7 @@
         </view>
         <view class="single_line"></view>
         <view class="bottom_content">
-            <view>May 9,2019</view>
+            <view bindtap='wordDetail' id="{{item.wordId}}">详细信息</view>
             <view bindtap="deleteWord" id="{{item.wordId}}">
                 移除
                 <text class="iconfont icon-DeleteFilled" style='font-size:17px; color:rgb(116, 171, 30)'></text>

@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-var util = require('../../utils/util.js')
+var util = require('../../utils/util')
 var app = getApp()
 
 Page({
@@ -17,6 +17,7 @@ Page({
     var that = this
     //调用应用实例的方法获取全局数据
     that.getData();
+    util.getUserDict("start")
   },
   handleSwipeOut(...args) {
     console.log(args)
