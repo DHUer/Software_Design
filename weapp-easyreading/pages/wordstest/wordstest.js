@@ -10,33 +10,6 @@ var ringChart = null;
 var columnChart = null;
 
 
-var chartData = {
-  main: {
-    title: '',
-    data: [15, 20, 45, 37,85,0],
-    categories: ['高中', 'CET-4', 'CET-6', '考研','雅思','托福','GRE']
-  },
-  sub: [{
-    title: '2012年度成交量',
-    data: [70, 40, 65, 100, 34, 18],
-    categories: ['1', '2', '3', '4', '5', '6']
-  }, {
-    title: '2013年度成交量',
-    data: [55, 30, 45, 36, 56, 13],
-    categories: ['1', '2', '3', '4', '5', '6']
-  }, {
-    title: '2014年度成交量',
-    data: [76, 45, 32, 74, 54, 35],
-    categories: ['1', '2', '3', '4', '5', '6']
-  }, {
-    title: '2015年度成交量',
-    data: [76, 54, 23, 12, 45, 65],
-    categories: ['1', '2', '3', '4', '5', '6']
-  }]
-};
-
-
-
 Page({
 
   /**
@@ -55,7 +28,7 @@ Page({
     currentTab: 0,
     history: 0,
 
-    chartTitle: '总成交量',
+    chartTitle: '词汇覆盖表',
     isMainChartDisplay: true,
 
     yes:false,
@@ -68,6 +41,8 @@ Page({
     correctNum:0,
     wrongNum:0,
 
+    title:"",
+
       allList:{},
     cet4List:[],
     cet6List:[],
@@ -78,7 +53,7 @@ Page({
     toeflList:[],
 
     onecorrectnum:0,
-      correctList:[],
+      correctList:[0,0,0,0,0,0,0],
 
     testList:[]
   },
@@ -93,18 +68,9 @@ Page({
           const feed=res.data;
 
           that.setData({
-              /* cet4List:feed.cet4,
-               cet6List:feed.cet6,
-               gaozhongList:feed.gaozhong,
-               greList:feed.gre,
-               ieltsList:feed.ielts,
-               kaoyanList:feed.kaoyan,
-               toeflList:feed.toefl*/
               allList:feed
           });
           that.search()
-          // this.showPie()
-          //that.showChart()
       });
 
   },
@@ -134,7 +100,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+   
   },
 
   /**
@@ -150,7 +116,9 @@ Page({
   onReachBottom: function () {
 
   },
-
+/**
+ * 选择不认识
+ */
   unknown(){
     var x = this.data.unknownNum + 1
     this.setData({ unknownNum: x })
@@ -161,37 +129,31 @@ Page({
       var obj = {}
       obj.word = this.data.true_word
       obj.flag = 0
+      obj.mean=this.data.title
       var l;
-      if(num<10) l=this.data.cet4List;
-      else if(num<20)l=this.data.kaoyanList;
-      /*else if(num<30)l=this.data.ieltsList;
-      else if(num<40)l=this.data.greList;
-      else if(num<50) l=this.data.cet6List;
-      else if(num<60)l=this.data.gaozhongList;
-      else  l=this.data.toeflList;*/
+    if (num % 7 === 0) l = this.data.gaozhongList;
+    else if (num % 7 === 1) l = this.data.cet4List;
+    else if (num % 7 === 2) l = this.data.cet6List;
+    else if (num % 7 === 3) l = this.data.kaoyanList;
+    else if (num % 7 === 4) l = this.data.ieltsList;
+    else if (num % 7 === 5) l = this.data.toeflList;
+    else l = this.data.greList;
       l.push(obj)
       this.setData({l})
       console.log(this.data.cet4List)
 
-    if ((num + 1) % 10 === 0) {
-      let temp = this.data.onecorrectnum;
-      let ll = this.data.correctList;
-      ll.push(temp * 10)
-      this.setData({
-        onecorrectnum:0,
-        correctList:ll
-      })
-    }
 
     var that = this
     setTimeout(function () {
       that.next()
     }, 600)
   },
-
+/**
+ * 选择答案
+ */
   choice(e) {
     console.log(e)
-    if (e.currentTarget.id === this.data.true_word) {
+    if (e.currentTarget.id === this.data.true_word) {//正确
       var x = this.data.correctNum + 1
       this.setData({ correctNum: x })
       var y = this.data.onecorrectnum + 1
@@ -209,26 +171,41 @@ Page({
         var obj = {}
         obj.word = this.data.true_word
         obj.flag = 1
-        var l;
-        if(num<10) l=this.data.cet4List;
-        else if(num<20)l=this.data.kaoyanList;
-      /*  else if(num<30)l=this.data.ieltsList;
-        else if(num<40)l=this.data.greList;
-        else if(num<50) l=this.data.cet6List;
-        else if(num<60)l=this.data.ieltsList;
-        else  l=this.data.toeflList;*/
+      obj.mean = this.data.title
+        var l,correctnum,cl;
+        cl=this.data.correctList;
+      if (num % 7 === 0) { 
+        l = this.data.gaozhongList;
+        cl[0]=cl[0]+1;
+        }
+      else if (num % 7 === 1) { 
+        l = this.data.cet4List;
+        cl[1]=cl[1]+1;
+        }
+      else if (num % 7 === 2) {
+        l = this.data.cet6List;
+        cl[2]=cl[2]+1;
+      }
+      else if (num % 7 === 3) {
+         l = this.data.kaoyanList;
+          cl[3]=cl[3]+1; 
+          }
+      else if (num % 7 === 4) {
+         l = this.data.ieltsList;
+          cl[4]+=1;
+           }
+      else if (num % 7 === 5) { 
+        l = this.data.toeflList;
+        cl[5]+=1; 
+        }
+      else {
+         l = this.data.greList;
+         cl[6]+=1;
+          }
       l.push(obj)
       this.setData({l})
+      this.setData({cl})
 
-      if ((num + 1) % 10 === 0) {
-        let temp = this.data.onecorrectnum;
-        let ll = this.data.correctList;
-        ll.push(temp * 10)
-        this.setData({
-          onecorrectnum: 0,
-          correctList: ll
-        })
-      }
 
       var that=this
       setTimeout(function(){
@@ -236,7 +213,7 @@ Page({
       },500)
     //  this.next();
 
-    } else {
+    } else {//选错
       //this.set_score(this.data.true_num)
       var x = this.data.wrongNum+ 1
       this.setData({ wrongNum: x })
@@ -247,74 +224,45 @@ Page({
         let num=this.data.wordsNum-1
         var obj = {}
         obj.word = this.data.true_word
-        obj.flag = -1
+        obj.flag = 0
+      obj.mean = this.data.title
         var l;
-        if(num<10) l=this.data.cet4List;
-        else if(num<20)l=this.data.kaoyanList;
-        /*else if(num<30)l=this.data.ieltsList;
-        else if(num<40)l=this.data.greList;
-        else if(num<50) l=this.data.cet6List;
-        else if(num<60)l=this.data.ieltsList;
-        else  l=this.data.toeflList;*/
+      if (num % 7 === 0) l = this.data.gaozhongList;
+      else if (num % 7 === 1) l = this.data.cet4List;
+      else if (num % 7 === 2) l = this.data.cet6List;
+      else if (num % 7 === 3) l = this.data.kaoyanList;
+      else if (num % 7 === 4) l = this.data.ieltsList;
+      else if (num % 7 === 5) l = this.data.toeflList;
+      else l = this.data.greList;
         l.push(obj)
         this.setData({l})
 
-      if ((num + 1) % 10 === 0) {
-        let temp = this.data.onecorrectnum;
-        let ll = this.data.correctList;
-        ll.push(temp * 10)
-        this.setData({
-          onecorrectnum: 0,
-          correctList: ll
-        })
-      }
-
       var that=this
       setTimeout(function(){
-         that.next()
+         that.next()//抽取下一个词
       },500)
-
-      const innerAudioContext = wx.createInnerAudioContext()
-      innerAudioContext.autoplay = true
-      innerAudioContext.src = 'https://media-audio1.baydn.com/us%2Fs%2Fsa%2Fsad_v4.mp3'
-      innerAudioContext.onPlay(() => {
-      })
-      if (this.data.true_num > this.data.score) {
-       // this.set_score(this.data.true_num)
-        this.setData({ history: this.data.true_num })
-      } else {
-        this.setData({ history: this.data.score })
-      }
-
-     // this.getRankGlobalData();
-
     }
-   // this.setData({ showDaan: true })
   },
-    searchOneType(num){
-    var that=this
-        const promise = new Promise((resolve, reject) => {
-
-
-        });
-    },
+  /**
+   * 查找测试词汇
+   */
   search() {
     var that=this
       let num=that.data.wordsNum
-      if(num<20){
+      if(num<10){
 
    /* var idx = Math.floor(Math.random() * 12345) + 1
     var word = list.wordList[idx]*/
           var word;
-          if(num<10) word = that.data.allList.cet4[num]
-          else if(num<20)word = that.data.allList.kaoyan[num-10]
-          else if(num<30)word = that.data.allList.ielts[num-20]
-          else if(num<40)word = that.data.allList.gre[num-30]
-          else if(num<50)word = that.data.allList.cet6[num-40]
-          else if(num<60)word = that.data.allList.ielts[num-50]
-          else word = that.data.allList.toelf[num-60]
+          if(num%7===0) word = that.data.allList.gaozhong[parseInt(num/7)]
+          else if (num % 7 === 1) word = that.data.allList.cet4[parseInt(num/7)]
+          else if (num % 7 === 2) word = that.data.allList.cet6[parseInt(num/7)]
+          else if (num % 7 === 3) word = that.data.allList.kaoyan[parseInt(num/7)]
+          else if (num % 7 === 4) word = that.data.allList.ielts[parseInt(num/7)]
+          else if (num % 7 === 5) word = that.data.allList.toefl[parseInt(num/7)]
+          else word = that.data.allList.gre[parseInt(num/7)]
 
-          console.log(num)
+          console.log(parseInt(num/7))
           console.log(word)
 
           wx.request({
@@ -327,6 +275,7 @@ Page({
                       true_word: word
                   })
                   console.log(that.data.title)
+                  //随机放置正确答案
                   var num = Math.floor(Math.random() * 400) + 1
                   if (num < 100) {
                       that.setData({
@@ -362,41 +311,58 @@ Page({
                   }
               }
           })
+          //已测试次数+1
           const x = num + 1;
           that.setData({wordsNum:x})
     }
 else{
-    this.setData({lshow: true});
+  var that=this
+    that.setData({lshow: true});
     this.complete()
 }
   },
+  //获取下一个测试词汇
   next() {
     this.setData({ ans: false })
     this.setData({ yes: false })
     this.search()
   },
+  //完成测试，显示测试数据图表
   complete() {
     console.log(this.data.unknownNum)
     console.log(this.data.wrongNum)
     console.log(this.data.correctNum)
     console.log(this.data.correctList)
+    console.log(this.data.wordsNum)
+    this.coList();
     this.showPie()
     this.showChart()
     var that=this
     setTimeout(function(){
       that.setData({ lshow: false })
       that.setData({complete:true})
-    },2500)
+    },2000)
 
   },
-  again() {
-    this.setData({
-      showDaan: false,
-      complete: false,
-      num: 1,
-      true_num: 0
+  //完成测试后，处理CorrectList
+ coList(){
+   var that = this
+    return new Promise(function(resolve,reject){
+      
+      var testNum=that.data.wordsNum-1;
+      var cl=that.data.correctList;
+      var flag1=parseInt(testNum/7);
+      var flag2=testNum%7;
+      for(var i=0;i<7;i++){
+        if(i<=flag2){
+          cl[i]=(cl[i]/(flag1+1))*100;
+        }
+        else if(flag1!=0)cl[i]=cl[i]*100/flag1;
+      }
+
+      that.setData({cl})
+      console.log(cl)
     })
-    this.search()
   },
   showPie(){
     var windowWidth = 400;
@@ -457,35 +423,18 @@ else{
       ringChart.stopAnimation();
     }, 600);
   },
-
-  backToMainChart: function () {
-    this.setData({
-      chartTitle: chartData.main.title,
-      isMainChartDisplay: true
-    });
-    columnChart.updateData({
-      categories: chartData.main.categories,
-      series: [{
-        name: '成交量',
-        data: chartData.main.data,
-        format: function (val, name) {
-          return val.toFixed(2) + '%';
-        }
-      }]
-    });
-  },
   toDetailwords:function(e){
     var index = columnChart.getCurrentDataIndex(e);
     console.log(index)
     if (index > -1) {
       console.log(index)
-      if (index === 0) app.testList = this.data.cet4List;
-      else if (index === 1) app.testList = this.data.kaoyanList;
-      else if (index === 2) app.testList = this.data.ieltsList;
-      else if (index === 3) app.testList = this.data.greList;
-      else if (index === 4) app.testList = this.data.cet6List;
-      else if (index === 5) app.testList = this.data.gaozhongList;
-      else if (index === 6) app.testList = this.data.toeflList;
+      if (index === 0) app.testList = this.data.gaozhongList;
+      else if (index === 1) app.testList = this.data.cet4List;
+      else if (index === 2) app.testList = this.data.cet6List;
+      else if (index === 3) app.testList = this.data.kaoyanList;
+      else if (index === 4) app.testList = this.data.ieltsList;
+      else if (index === 5) app.testList = this.data.toeflList;
+      else if (index === 6) app.testList = this.data.greList;
       
       wx.navigateTo({
         url: "./res/res"
@@ -521,22 +470,7 @@ else{
     }*/
 
   },
-    handleData(){
-       var num1=0
-        let l=this.data.correctList
-      for(var i=0;i<this.data.cet4List;i++){
-        if(this.data.cet4List[i].flag===1)num1++
-        }
-        console.log(num1)
-        l.push(num1*10)
-
-        var num2=0;
-        for(var i=0;i<this.data.kaoyanList;i++){
-            if(this.data.kaoyanList[i].flag===1)num2++
-        }
-        l.push(num2*10);
-        this.setData({l})
-    },
+  
   showChart(){
     var windowWidth = 320;
     try {
@@ -550,9 +484,9 @@ else{
       canvasId: 'columnCanvas',
       type: 'column',
       animation: true,
-      categories: chartData.main.categories,
+      categories: ['高中', 'CET-4', 'CET-6', '考研', '雅思', '托福', 'GRE'],
       series: [{
-        name: '成交量',
+        name: '',
         data: this.data.correctList,
         format: function (val, name) {
           return val.toFixed(2) + '%';
@@ -577,129 +511,15 @@ else{
       width: windowWidth,
       height: 200,
     });
-  }
-  /*,
-  set_score(score) {
-
-    if (!wx.getStorageSync("diary_id")) {
-      const query = Bmob.Query('diary');
-      query.set("score", score)
-      query.set("head_url", wx.getStorageSync('userInfo').avatarUrl)
-      query.set("title", wx.getStorageSync('userInfo').nickName)
-      query.save().then(res => {
-        console.log(res)
-
-      }).catch(err => {
-        console.log(err)
-        wx.setStorage({
-          key: 'diary_id',
-          data: res.objectId,
-        })
-      })
-    }
-    else {
-      const query = Bmob.Query('tableName');
-      query.get(wx.getStorageSync("diary_id")).then(res => {
-        console.log(res)
-        res.set("score", score)
-        res.set("head_url", wx.getStorageSync('userInfo').avatarUrl)
-        res.set("title", wx.getStorageSync('userInfo').nickName)
-        res.save()
-      }).catch(err => {
-        console.log(err)
-      })
-    }
-
-    /*
-    var openId = this.data.openId
-    if (openId) {
-      qcloud.request({
-        login: false,
-        url: `${app.appData.baseUrl}set_score`,
-        data: {
-          openId,
-          score,
-        },
-        success: (res) => {
-          console.log(res)
-
-        },
-        fail(error) {
-          util.showModel('请求失败', error);
-        },
-      });
-    }
-    *//*
-},
-  getScore(openId) {
-    /*
-    if (openId) {
-      qcloud.request({
-        login: false,
-        url: `${app.appData.baseUrl}get_score`,
-        data: {
-          openId
-        },
-        success: (res) => {
-          let score = res.data.data;
-          this.setData({
-            score
-          })
-        },
-        fail(error) {
-          util.showModel('请求失败', error);
-        },
-      });
-
-    }
-    */
- /* },
-  onReachBottom: function () {//下拉加载
-
   },
-  getRankGlobalData() {//加载全球排名的数据
-    const query = Bmob.Query('diary');
-    //query.limit(10);
-    query.order("score");
-    query.find().then(res => {
-      console.log(res);
-      var len = res.length;
-      for (var i = 0; i < 5; i++) {
-        for (var j = i + 1; j < len; j++) {
-          if (res[i] < res[j]) {
-            var temp = res[i];
-            res[i] = res[j];
-            res[j] = temp;
-          }
-        }
-      }
-      this.setData({ globalData: res })
-
-
-    });
-
-
-    /*
-      const that = this
-      qcloud.request({
-        login: false,
-        url: app.appData.baseUrl + 'getRankGlobalData',
-        data: {
-          loadNumber: that.data.loadNumber
-        },
-        success: (res) => {
-          that.setData({
-            globalData: that.data.globalData.concat(res.data.data),//数据叠加
-            loadNumber: that.data.loadNumber + 1
-          })
-        },
-        fail(error) {
-          util.showModel('请求失败', error);
-          console.log('request fail', error);
-        },
-      })
-      */
-//},
+  /**
+   * 中途退出测试
+   */
+  quit(){
+    var that = this
+    that.setData({ lshow: true });
+    this.complete()
+  }
 
 })
 

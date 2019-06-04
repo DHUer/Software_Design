@@ -34,17 +34,17 @@ Page({
       var feed = res.data
       var articles_data = feed;
       console.log(articles_data)
-    /*  var a=[];
+     var a=[];
       for(var i=0;i<feed.length;i++){
         var obj=feed[i].fields
         a.push(obj)
-      }*/
+      }
       that.setData({
-     //   feed: articles_data,
-        articles:articles_data,
+        feed: articles_data,
+        articles:a,
         art_length: articles_data.length
       });
-     
+
     });
   },
     bindItemTap: function() {

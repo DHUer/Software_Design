@@ -15,6 +15,8 @@ Page({
     interval: 5000,
     duration: 1000,
     feed: [],
+    articles:[],
+    art_length:0,
     feed_length: 0,
       categoryTabs:[],
       currentTab:0
@@ -76,14 +78,26 @@ Page({
 
   //使用本地 fake 数据实现刷新效果
   refresh: function(){
-    var feed = util.getDiscovery();
-    console.log("loaddata");
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
-    });
-  },
+      var that = this
+      util.getArticles().then(function (res) {
+        console.log("loaddata");
+        var feed = res.data
+        var articles_data = feed;
+        console.log(articles_data)
+        var a = [];
+        for (var i = 0; i < feed.length; i++) {
+          var obj = feed[i].fields
+          a.push(obj)
+        }
+        that.setData({
+          feed: articles_data,
+          articles: a,
+          art_length: articles_data.length
+        });
+
+      });
+    },
+
 
   //使用本地 fake 数据实现继续加载效果
   nextLoad: function(){
