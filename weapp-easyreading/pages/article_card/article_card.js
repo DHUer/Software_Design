@@ -49,8 +49,11 @@ Page({
     });
   },
     bindItemTap: function() {
+      var pk = 1020
         wx.navigateTo({
-            url: '../article/article'
+          //希望在这里返回给我本片文章的PK值
+          url: '../article/article?pk=' + pk
+
         })
     },
 })

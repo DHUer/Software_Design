@@ -64,9 +64,11 @@ function getArticles(){
     }
   })
   });
+  
   return promise;
 }
 
+//得到测试的单词
 function getWords(){
     const promise = new Promise((resolve, reject) => {
         wx.request({
@@ -136,9 +138,7 @@ function getCategorys(){
     })
 }
 
-
-
-
+//用户添加单词到服务器中的单词本
 function addToDict(word){
   wx.request({
     url:'http://localhost:8000/news/voca_book/' + 0 + '/' + wx.getStorageSync('uid') + '/' + word +'/',
@@ -154,6 +154,7 @@ function addToDict(word){
   })
 }
 
+//返回用户的生词列表
 function getUserDict(){
   return new Promise(function(resolve, reject){
     wx.request({
@@ -175,6 +176,7 @@ function getUserDict(){
   })
 }
 
+//删除单词
 function deleteWord(word){
   wx.request({
     url: 'http://localhost:8000/news/voca_book/' + 1 + '/' + wx.getStorageSync('uid') + '/' + word + '/',
@@ -195,6 +197,8 @@ function deleteWord(word){
     }
   })
 }
+
+//查询单词的细节
 function getWords_detail(word){
   return new Promise(function(resolve, reject){
     wx.request({
@@ -208,7 +212,7 @@ function getWords_detail(word){
   })
 }
 
-
+//更新用户的单词信息，方便本地的显示
 function updateWordInfo(){
   return new Promise(function(resolve, reject){
     getUserDict().then(function(value){
@@ -230,8 +234,6 @@ function updateWordInfo(){
         }, function (error){
         })
       }
-      //console.log(">>>>>>>>>>>>>>>>>")
-      //console.log(wx.getStorageSync('vocabulary'))
       resolve(wx.getStorageSync('vocabulary'))
     })
   })
