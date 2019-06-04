@@ -23,7 +23,9 @@ Page({
       wordCounts: 123,
       favoriteCounts: 500
     })
-    
+    util.getArticleWordList(1201).then(function(value){
+      console.log(value)
+    })
   },
   tapName: function(event){
     console.log(event)

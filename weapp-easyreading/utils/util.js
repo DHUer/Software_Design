@@ -64,7 +64,7 @@ function getArticles(){
     }
   })
   });
-  
+
   return promise;
 }
 
@@ -239,6 +239,23 @@ function updateWordInfo(){
   })
 }
 
+//获取文章的列表的单词信息，方便进行渲染
+function getArticleWordList(pk){
+  return new Promise(function(resolve, reject){
+    wx.request({
+      url: 'http://localhost:8000/news/get_article_by_id/' + pk + '/',
+      success: function(resp){
+        console.log(resp)
+        console.log(resp.content)
+        console.log("ddddddd")
+        resolve(resp)
+      },
+      fail: function(resp){
+        console.log(resp)
+      }
+    })
+  })
+}
 
 module.exports.getData = getData;
 module.exports.getData2 = getData2;
@@ -253,3 +270,4 @@ module.exports.addToDict = addToDict;
 module.exports.getUserDict = getUserDict;
 module.exports.deleteWord = deleteWord;
 module.exports.updateWordInfo = updateWordInfo;
+module.exports.getArticleWordList = getArticleWordList;
