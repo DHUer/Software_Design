@@ -22,6 +22,15 @@ Component({
   methods: {
     handleTap() {
       console.log('tap')
+    },
+    bindItemTap: function () {
+      console.log(this.data.itemData)
+      var pk = this.data.itemData.pk
+      wx.navigateTo({
+        //希望在这里返回给我本片文章的PK值
+        url: '../article/article?pk=' + pk
+
+      })
     }
   }
 })

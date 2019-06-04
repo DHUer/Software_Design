@@ -11,7 +11,8 @@ Page({
     ukPhonetic: null,
   },
   
-  onLoad: function () {
+  onLoad: function (options) {
+    console.log("当前文章id:"+options.pk)
     var that = this;
     //sample data
     that.setData({
