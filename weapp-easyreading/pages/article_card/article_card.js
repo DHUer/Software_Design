@@ -7,7 +7,8 @@ Page({
   data: {
     feed: [],
     articles:[],
-    art_length: 0
+    art_length: 0,
+    thepk:0
   },
   //事件处理函数
   bindViewTap: function() {
@@ -47,13 +48,5 @@ Page({
       });
 
     });
-  },
-    bindItemTap: function() {
-      var pk = 1020
-        wx.navigateTo({
-          //希望在这里返回给我本片文章的PK值
-          url: '../article/article?pk=' + pk
-
-        })
-    },
+  }
 })

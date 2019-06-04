@@ -1,5 +1,5 @@
-<scroll-view scroll-y="true" class="mp-swipe-card-item">
-  <view bind:tap="handleTap" class="id-text">{{itemData.title}}</view>
+<scroll-view scroll-y="true" class="mp-swipe-card-item"  bindtap="bindItemTap">
+  <view bind:tap="handleTap" class="id-text">{{itemData.fields.title}}</view>
 
     <view class='feed-tail'>
 
@@ -33,12 +33,12 @@
 
     <view class="feed-content">
             <view class="avatar flex-item">
-                       <image src="{{itemData.picUrl}}"></image>
+                       <image src="{{itemData.fields.picUrl}}"></image>
                   </view>
 
                 <view class="answer-body" bindtap="bindItemTap">
                     <a class="">
-                       {{itemData.content}}
+                       {{itemData.fields.content}}
                         </a>
 
                 </view>
