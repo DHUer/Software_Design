@@ -168,7 +168,7 @@
 
 .container .feed-item .feed-content .art-more .right{
     margin-top: 5px;
-    margin-left: 80px;
+    margin-left: 70px;
 }
 
 .container .feed-item .feed-content .answer-body .avatar image{

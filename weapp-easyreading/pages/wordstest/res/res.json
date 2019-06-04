@@ -1,3 +1,3 @@
 {
-  "usingComponents": {}
+  "usingComponents": {"w-swiper-out": "../../../components/w-swiper-out/index"}
 }

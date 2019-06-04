@@ -1,1 +1,6 @@
 /* pages/wordstest/res/res.wxss */
+.example-content {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+}

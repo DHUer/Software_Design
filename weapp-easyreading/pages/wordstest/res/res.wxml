@@ -1,4 +1,13 @@
-<view class="container">
-    <view wx:for="{{list}}" wx:key="list">
-    </view>
-</view>
+<block wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+<w-swiper-out 
+  swiperOutBtns="{{ btns }}"
+  threshold=".7"
+  bind:added="added"
+>
+  <view class="example-content" style="" >
+  <text class="iconfont icon-meh"  wx:if="{{item.flag===0}}" style='margin-right:10px'></text>
+  <text class="iconfont icon-smile" wx:if="{{item.flag===1}}" style='margin-right:10px'></text>
+     {{item.word}}   
+  </view>
+</w-swiper-out>
+</block>

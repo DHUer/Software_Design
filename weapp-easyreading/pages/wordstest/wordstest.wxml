@@ -27,6 +27,9 @@
      <view class="project" bindtap="unknown" >
       <text class="word-miss" >不知道</text>
     </view>
+    <view class="project" bindtap="quit" >
+      <text class="word-miss" >我不想测了</text>
+    </view>
 </view>
 
 </view>

@@ -17,7 +17,7 @@
 
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
-    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <block wx:for="{{articles}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
 
        <view class="feed-item">
 
@@ -25,16 +25,16 @@
 
                 <view class="question" qid="{{question_id}}">
                     <a class="question-link">
-                        <text>{{item.question}}</text>
+                        <text>{{item.title}}</text>
                     </a>
                 </view>
 
                 <view class="answer-body flex-wrp" bindtap="bindItemTap">
                     <a class="">
-                        <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+                        <text class="answer-txt" aid="{{answer_id}}">{{item.content}}</text>
                         </a>
                     <view class="avatar flex-item">
-                       <image src="{{item.feed_source_img}}"></image>
+                       <image src="{{item.picUrl}}"></image>
                   </view>
                 </view>
 
@@ -51,7 +51,7 @@
 <view class="right">
                     <view class="book">
                         <image src="../../images/book.png"></image>
-                        <text>500词 </text>
+                        <text>{{item.lettNum}}词 </text>
                     </view>
                     <view class="watch">
                         <image src="../../images/eye.png"></image>
