@@ -20,8 +20,15 @@
 
 <view class="arrange">
     <view wx:for="{{passageArray}}" wx:key="" data-text="{{item}}" bindtap="popUp" hover-class='hover' >
-        <text style='margin-left: 10px;word-break:break-all;'>{{item}}</text>
+       <view wx:if="{{item == 523}}">
+            <view style="width:400px;height:10px"></view>
+            <view style="width:400px;height:10px"></view>  
+       </view>
+       <view wx:else>
+       <text style='margin-left: 10px;  word-wrap:break-word;'>{{item}}</text>  
+       </view>   
     </view>
+ 
 </view>
 <image src="../../images/1444983318907-_DSC1826.jpg"></image>
 

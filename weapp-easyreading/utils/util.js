@@ -245,10 +245,28 @@ function getArticleWordList(pk){
     wx.request({
       url: 'http://localhost:8000/news/get_article_by_id/' + pk + '/',
       success: function(resp){
-        console.log(resp)
-        console.log(resp.content)
-        console.log("ddddddd")
-        resolve(resp)
+        var temp = resp.data.content
+        var tempList = new Array()
+        console.log(resp.data.content)
+        for(var sentence in temp){
+          //console.log(temp[sentence])
+          tempList = tempList.concat(temp[sentence])
+          tempList.push(523)
+          //tempList.push("\n")
+          //tempList = tempList.push("//")
+          //tempList = tempList.push("//")
+        }
+        //console.log(resp.data.content)
+        //console.log(tempList)
+        var result = new Object()
+        result.passageTitle = resp.data.title
+        result.passageArray = tempList
+        result.publishTime = resp.data.date
+        result.passageLevel = "CET-4"
+        result.passageLable = resp.data.type
+        result.wordCounts = resp.data.num
+        console.log(result)
+        resolve(result)
       },
       fail: function(resp){
         console.log(resp)

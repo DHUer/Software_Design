@@ -10,41 +10,38 @@ Page({
     usPhonetic: null,
     ukPhonetic: null,
   },
-  
+
   onLoad: function (options) {
-    console.log("当前文章id:"+options.pk)
+    console.log("当前文章id:" + options.pk)
     var that = this;
-    //sample data
-    that.setData({
-      passageTitle: "South Africa's 'boxing grannies' juke and jab their way to healthier lives ",
-      passageArray: ["The", "classics", "identity", "the", "stars", "of", "their", "generation", "and", "provide", "the", "yearly", "narrative", "around", "which", "racing", "revolves.", "the", "2,000", "guineas,", "the", "1,000", "guineas,", "the", "oaks,", "the", "derby", "and", "the", "st.", "leger", "are", "the", "races", "that", "really", "matter,", "like", "majors", "in", "golf", "or", "grand", "slams", "in", "tennis.", "and", "they", "have", "serious", "history.", "the", "st.", "leger", "began", "in", "1776.", "they", "became", "collectively","\n\n", "known", "as", "the", "classics", "in", "1815,", "and", "ever", "since", "have", "crowned", "the", "best", "three-year-olds", "in", "training.", "with", "the", "guineas", "taking", "place", "at", "newmarket", "this", "weekend,", "cnn", "sport", "takes", "a", "closer", "look", "at", "the", "classics.", "the", "2019", "classic", "season", "kicks", "off", "saturday", "with", "the", "2,000", "guineas", "over", "the", "turf", "of", "the", "rowley", "mile", "racecourse", "in", "newmarket,", "suffolk,", "traditionally", "known", "as", "the", "home", "of", "english", "flat", "racing."],
-      publishTime: "May 9, 2019 ",
-      passageLevel: "CET-4",
-      passageLable: "Life",
-      wordCounts: 123,
-      favoriteCounts: 500
-    })
-    util.getArticleWordList(1201).then(function(value){
-      console.log(value)
+    util.getArticleWordList(options.pk).then(function (value) {
+      that.setData({
+        passageTitle: value.passageTitle,
+        passageArray: value.passageArray,
+        publishTime: value.publishTime,
+        passageLevel: value.passageLevel,
+        passageLable: value.passageLable,
+        wordCounts: value.wordCounts
+      })
     })
   },
-  tapName: function(event){
+  tapName: function (event) {
     console.log(event)
   },
-  onReady(e){
+  onReady(e) {
     this.audioCtx = wx.createAudioContext('myAudio')
   },
   audioPlay() {
     this.audioCtx.play()
   },
-  closeWindow: function(){
+  closeWindow: function () {
     var that = this;
     that.setData({
       showModal: false,
     })
   },
-   //查询单词
-   popUp: function lookUp(event) {
+  //查询单词
+  popUp: function lookUp(event) {
     var that = this;
     var words = event.currentTarget.dataset.text;
     words.trim();
@@ -64,7 +61,7 @@ Page({
         result = startStr + len + endStr;
       }
       return result;
-  
+
     };
     var appKey = "4b4fc6a27d8efcd1";
     var key = "HAoKg2mH8PlbrOKOWkZMKxKthOxmHAky";
@@ -76,7 +73,7 @@ Page({
     var sign = sha.SHA256(str1);
     wx.request({
       url: 'https://openapi.youdao.com/api',
-      data:{
+      data: {
         q: words,
         appKey: appKey,
         salt: salt,
@@ -93,8 +90,8 @@ Page({
         });
         console.log(response);
         //这里有可能因为查询结果为词组所以没有音标
-        if("basic" in response.data){
-          if("uk-phonetic" in response.data.basic) {
+        if ("basic" in response.data) {
+          if ("uk-phonetic" in response.data.basic) {
             that.setData({
               ukPhonetic: response.data.basic["uk-phonetic"]
             })
@@ -109,13 +106,13 @@ Page({
     })
   },
   detailListener: function () {
-    var wordBasic =this.data.result.query
+    var wordBasic = this.data.result.query
     console.log(wordBasic);
     wx.navigateTo({
       url: './wordDetails/wordDetails?wordBasic=' + wordBasic,
     })
   },
-  addToDict:function(){
+  addToDict: function () {
     var wordBasic = this.data.result.query
     util.addToDict(wordBasic)
   }
