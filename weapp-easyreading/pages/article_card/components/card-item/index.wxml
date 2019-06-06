@@ -7,7 +7,7 @@
 
             <view class="left">
                 <view class="art-tag">
-                    <text class="tag">tag1</text>
+                    <text class="tag">{{itemData.fields.atype}}</text>
                     <text class="tag">tag2</text>
                 </view>
             </view>
@@ -33,14 +33,22 @@
 
     <view class="feed-content">
             <view class="avatar flex-item">
-                       <image src="{{itemData.fields.picUrl}}"></image>
+                       <image src=""></image>
                   </view>
 
                 <view class="answer-body" bindtap="bindItemTap">
                     <a class="">
                        {{itemData.fields.content}}
                         </a>
-
+              <!-->  <view wx:for="{{itemData.fields.content}}" wx:key="" data-text="{{item}}" bindtap="popUp" hover-class='hover' >
+       <view wx:if="{{item == 523}}">
+            <view style="width:400px;height:10px"></view>
+            <view style="width:400px;height:10px"></view>  
+       </view>
+       <view wx:else>
+       <text style='margin-left: 10px;  word-wrap:break-word;'>{{item}}</text>  
+       </view>   
+    </view>-->
                 </view>
 </view>
 

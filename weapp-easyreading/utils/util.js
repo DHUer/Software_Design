@@ -104,6 +104,22 @@ function getData2(){
   return index.index;
 }
 
+//用户返回测试单词数据
+function setTest(test) {
+  wx.request({
+    url: 'http://localhost:8000/news/get_test_history/' + wx.getStorageSync('uid') + '/' + test + '/',
+    success: function (resp) {
+      wx.showToast({
+        title: "success",
+        icon: 'success',
+        duration: 1000,
+        mask: true
+      })
+      console.log(resp)
+    }
+  })
+}
+
 function getNext(){
   return index_next.next;
 }

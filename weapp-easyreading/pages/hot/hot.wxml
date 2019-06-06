@@ -17,41 +17,33 @@
 
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
-    <block wx:for="{{articles}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item"  >
 
-       <view class="feed-item">
+       <view class="feed-item" bindtap="bindItemTap" data-idx="{{item.pk}}" data-type="{{item.fields.btype}}">
 
             <view class="feed-content">
 
                 <view class="question" qid="{{question_id}}">
                     <a class="question-link">
-                        <text>{{item.title}}</text>
+                        <text>{{item.fields.title}}</text>
                     </a>
-                </view>
-
-                <view class="answer-body flex-wrp" bindtap="bindItemTap">
-                    <a class="">
-                        <text class="answer-txt" aid="{{answer_id}}">{{item.content}}</text>
-                        </a>
-                    <view class="avatar flex-item">
-                       <image src="{{item.picUrl}}"></image>
-                  </view>
                 </view>
 
 
 <view class="art-more">
 
+<view class="pic">
 <view class="left">
               <view class="art-tag">
-                <text class="tag">四级</text>
-                <text class="tag">生活</text>
+                <text class="tag">{{item.fields.btype}}</text>
+                <text class="tag">{{item.fields.atype}}</text>
                </view>
                </view>
 
 <view class="right">
                     <view class="book">
                         <image src="../../images/book.png"></image>
-                        <text>{{item.lettNum}}词 </text>
+                        <text>{{item.fields.lettNum}}词 </text>
                     </view>
                     <view class="watch">
                         <image src="../../images/eye.png"></image>
@@ -61,10 +53,9 @@
                         <image src="../../images/star.png"></image>
                         <text>27</text>
                     </view>
+
 </view>
-
-
-
+</view>
             </view>
 
             </view>

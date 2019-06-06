@@ -51,9 +51,9 @@
 .container .feed-item{
    position: relative;
     margin: 0 auto;
-    margin-top: 12px;
+    margin-top: 18px;
     width: 630rpx;
-    height: 240rpx;
+    height: 200rpx;
     padding: 30rpx;
     background: #FFFFFF;
     border: solid 1px #ebebeb;
@@ -102,7 +102,7 @@
   padding: 10rpx 0 0 0;
 }
 .container .feed-item .feed-content .question text{
-  font-size: 28rpx;
+  font-size: 35rpx;
   font-weight: 600px;
   line-height: 40rpx;
   text-space: 5rpx;
@@ -141,6 +141,7 @@
 .container .feed-item .feed-content .art-more{
    position: absolute;
     bottom: 5px;
+    width: 320px;
 }
 
 .container .feed-item .feed-content .art-more view{
@@ -154,11 +155,14 @@
     margin: 0 10rpx 0 0;
     vertical-align: middle;
 }
-.container .feed-item .feed-content .art-more .left{
+.container .feed-item .feed-content .art-more .pic .left{
     float: left;
     padding: 10rpx 0;
 }
-.container .feed-item .feed-content .art-more .right text{
+.container .feed-item .feed-content .art-more .pic{
+width: 320px;
+}
+.container .feed-item .feed-content .art-more  .pic .right text{
     color: #AFAFAF;
     height: 50rpx;
     vertical-align: middle;
@@ -166,18 +170,11 @@
     font-size: 24rpx;
 }
 
-.container .feed-item .feed-content .art-more .right{
-    margin-top: 5px;
-    margin-left: 70px;
+.container .feed-item .feed-content .art-more .pic .right{
+    margin-top: 10rpx;
+    float:right;
 }
 
-.container .feed-item .feed-content .answer-body .avatar image{
-   display: inline-block;
-    width: 120rpx;
-    height: 120rpx;
-    border-radius: 20rpx;
-    float: right;
-}
 
 .container .feed-item .feed-content .answer-actions{
   width: 630rpx;

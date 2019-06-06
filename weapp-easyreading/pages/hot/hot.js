@@ -3,13 +3,6 @@ const $vm = getApp()
 var util = require('../../utils/util.js')
 Page({
   data: {
-    navTab: ["推荐", "圆桌", "热门", "收藏"],
-    currentNavtab: "0",
-    imgUrls: [
-      '../../images/24213.jpg',
-      '../../images/24280.jpg',
-      '../../images/1444983318907-_DSC1826.jpg'
-    ],
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -33,9 +26,15 @@ Page({
     });
   },
 
-  bindItemTap: function() {
+  bindItemTap: function(e) {
+    var pk = e.currentTarget.dataset['idx'];
+    var btype = e.currentTarget.dataset['type'];
+  // console.log("now"+e.currentTarget.dataset['idx'])
+  console.log(btype)
     wx.navigateTo({
-      url: '../article/article'
+      //希望在这里返回给我本片文章的PK值
+       url: '../article/article?pk=' + pk+'&btype='+btype
+
     })
   },
   bindQueTap: function() {
@@ -86,7 +85,15 @@ Page({
         console.log(articles_data)
         var a = [];
         for (var i = 0; i < feed.length; i++) {
-          var obj = feed[i].fields
+          var l=feed[i].fields.title.length;
+          if(l<40)feed[i].fields.btype = "gaozhong";
+          else if (l < 50) feed[i].fields.btype = "cet4";
+          else if (l < 70) feed[i].fields.btype = "cet6";
+          else if (l < 80) feed[i].fields.btype = "kaoyan";
+          else if (l < 90) feed[i].fields.btype = "ielts";
+          else if (l < 100) feed[i].fields.btype = "toelf";
+          else feed[i].fields.btype = "gre";
+          var obj = feed[i].fields;
           a.push(obj)
         }
         that.setData({

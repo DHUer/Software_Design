@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/hot/hot",
     "pages/article_card/article_card",
     "pages/index/index",
-    "pages/hot/hot",
     "pages/hot/manage/manage",
     "pages/words/words",
     "pages/article/article",
@@ -27,13 +27,13 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/article_card/article_card",
+        "pagePath": "pages/hot/hot",
         "text": "",
         "iconPath": "images/read.png",
         "selectedIconPath": "images/read-fill.png"
       },
       {
-        "pagePath": "pages/hot/hot",
+        "pagePath": "pages/article_card/article_card",
         "text": "",
         "iconPath": "images/compass.png",
         "selectedIconPath": "images/compass-fill.png"

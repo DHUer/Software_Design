@@ -15,6 +15,9 @@ Component({
   data: {
 
   },
+  onLoad: function () {
+    console.log("card onload")
+  },
 
   /**
    * 组件的方法列表
@@ -25,10 +28,11 @@ Component({
     },
     bindItemTap: function () {
       console.log(this.data.itemData)
-      var pk = this.data.itemData.pk
+      var pk = this.data.itemData.pk;
+      var btype=this.data.itemData.fields.btype;
       wx.navigateTo({
         //希望在这里返回给我本片文章的PK值
-        url: '../article/article?pk=' + pk
+        url: '../article/article?pk=' + pk + "&btype="+btype
 
       })
     }
