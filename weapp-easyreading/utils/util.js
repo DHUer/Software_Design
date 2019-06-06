@@ -292,7 +292,7 @@ function getArticleWordList(pk){
 //收藏文章
 function addToFavorite(pk){
   wx.request({
-    url: 'http://localhost:8000/news/collect/' + pk + '/' + wx.getStorageSync('uid')
+    url: 'http://localhost:8000/news/collect_article/' + pk + '/' + wx.getStorageSync('uid')
   })
 }
 module.exports.getData = getData;
