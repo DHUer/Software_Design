@@ -9,7 +9,8 @@ Page({
     articles:[],
     art_length: 0,
     thepk:0,
-    curcontent:''
+    curcontent:'',
+    lshow:true
   },
   //事件处理函数
   bindViewTap: function() {
@@ -24,6 +25,9 @@ Page({
       )
     util.getUserDict("start")
     })
+  },
+  onReady: function (){
+      this.setData({lshow:false})
   },
   handleSwipeOut(...args) {
     console.log(args)

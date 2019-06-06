@@ -34,9 +34,6 @@
 
 </view>
 
-<view wx:if="{{lshow}}">
- <w-indicator show text="Loading..." color='#35b59c' size="small" type="ball"  />
-</view>
 
 <view class='chartcontainer' wx:if="{{complete}}">
  <view>
@@ -48,5 +45,4 @@
 		{{chartTitle}}
 	</view>
     <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="toDetailwords"></canvas>
-    <view style="text-align:center">点击数据每一项查看详情</view>
 </view>

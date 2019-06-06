@@ -36,28 +36,3 @@
     background: #fff;
 }
 
-/* header 部分导航 */
-.header{
-  width: 100%;
-  background-color: #fff;
-  font-size: 30rpx;
-  display: flex;
-  align-items: center;
-  height: 64rpx;
-  position: relative;
-}
-.sv__container{
-  width: 21rem;
-  height: 64rpx;
-  white-space: nowrap;
-}
-.sv__item{
-  padding: 14rpx;
-  display: inline-block;
-}
-.sv-manager{
-  padding-left:20rpx;
-  width: 1rem;
-  height: 1rem;
-  vertical-align: center;
-}

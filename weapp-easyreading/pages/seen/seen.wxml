@@ -1,21 +1,14 @@
-<!--index.wxml-->
-<w-tabs
- bind:onChange="handleChange"
- options="{{ tabs }}"
- currentIndex="{{ index }}"
-/>
+<scroll-view scroll-y="true" class="container" >
 
-<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <block wx:for="{{seenList}}" wx:for-index="idx" wx:for-item="item"  >
 
-    <block wx:for="{{nowfeed}}" wx:for-index="idx" wx:for-item="item"  >
-
-       <view class="feed-item" bindtap="bindItemTap" data-idx="{{item.pk}}" data-type="{{item.fields.btype}}">
+       <view class="feed-item" bindtap="bindItemTap" data-idx="{{item.id}}" data-type="{{item.btype}}">
 
             <view class="feed-content">
 
-                <view class="question" qid="{{question_id}}">
+                <view class="question" >
                     <a class="question-link">
-                        <text>{{item.fields.title}}</text>
+                        <text>{{item.title}}</text>
                     </a>
                 </view>
 
@@ -25,15 +18,15 @@
 <view class="pic">
 <view class="left">
               <view class="art-tag">
-                <text class="tag">{{item.fields.btype}}</text>
-                <text class="tag">{{item.fields.atype}}</text>
+                <text class="tag">{{item.btype}}</text>
+                <text class="tag">{{item.type}}</text>
                </view>
                </view>
 
 <view class="right">
                     <view class="book">
                         <image src="../../images/book.png"></image>
-                        <text>{{item.fields.lettNum}}词 </text>
+                        <text>{{item.num}}词 </text>
                     </view>
                     <view class="watch">
                         <image src="../../images/eye.png"></image>

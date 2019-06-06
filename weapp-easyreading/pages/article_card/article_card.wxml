@@ -1,5 +1,8 @@
 <!--index.wxml-->
-
+<view wx:if="{{lshow}}" style='justify-content: center;display: flex;align-items: center;height: 600px;'>
+ <w-indicator show text="Loading..." color='#35b59c' size="small" type="ball"  />
+</view>
+<view wx:if="{{!lshow}}">
 <view class="container">
   <view class="swipe-card-container">
     <view class="placeholder-0"></view>
@@ -15,4 +18,5 @@
       <view>{{item}}</view>
     </mp-swipe-card>
   </view>
+</view>
 </view>

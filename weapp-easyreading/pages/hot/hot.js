@@ -12,7 +12,16 @@ Page({
     art_length: 0,
     feed_length: 0,
     categoryTabs: [],
-    currentTab: 0
+    currentTab: 0,
+    nowtype:0,
+    nowfeed:[],
+    tabs: [
+      'All',
+      'World',
+      'Health',
+      'Sport',
+      'Home'
+    ]
   },
   onLoad: function () {
     console.log('onLoad')
@@ -101,7 +110,8 @@ Page({
         that.setData({
           feed: articles_data,
           articles: a,
-          art_length: articles_data.length
+          art_length: articles_data.length,
+          nowfeed:articles_data
         });
 
 
@@ -120,11 +130,53 @@ Page({
     });
   },
   onShow() {
-    if ($vm.globalData.categoryChanged) {
-      util.getCategorys().then(res => this.setData({
-        categoryTabs: res
-      }))
-      $vm.globalData.categoryChanged = false
+
+  },
+  handleChange:function(e){
+    const index = e.detail.value;
+    if(index===1){
+      var alllist=this.data.feed;
+      var temp=[];
+       for(let i=0;i<alllist.length;i++){
+          var obj=alllist[i];
+          if(obj.fields.atype==='World')temp.push(obj)
+        }
+      console.log(temp)
+        this.setData({nowfeed:temp})
+    }
+    else if (index === 2) {
+      var alllist = this.data.feed;
+      var temp = [];
+      for (let i = 0; i < alllist.length; i++) {
+        var obj = alllist[i];
+        if (obj.fields.atype === 'Health') temp.push(obj)
+      }
+      console.log(temp)
+      this.setData({ nowfeed: temp })
+    }
+    else if (index === 3) {
+      var alllist = this.data.feed;
+      var temp = [];
+      for (let i = 0; i < alllist.length; i++) {
+        var obj = alllist[i];
+        if (obj.fields.atype === 'Sport') temp.push(obj)
+      }
+      console.log(temp)
+      this.setData({ nowfeed: temp })
+    }
+    else if (index === 4) {
+      var alllist = this.data.feed;
+      var temp = [];
+      for (let i = 0; i < alllist.length; i++) {
+        var obj = alllist[i];
+        if (obj.fields.atype === 'Home') temp.push(obj)
+      }
+      console.log(temp)
+      this.setData({ nowfeed: temp })
+    }
+    else {
+      var alllist = this.data.feed;
+      this.setData({ nowfeed: alllist })
     }
   }
 });

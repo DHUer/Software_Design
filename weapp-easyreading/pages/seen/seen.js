@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    starList: []
+    seenList: []
   },
 
   /**
@@ -13,26 +13,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    util.getCollection().then(function (value) {
+    util.getSeen().then(function (value) {
       console.log(value)
-      var a=[];
-      for (var i = 0; i < value.length; i++) {
-        var l = value[i].fields.title.length;
-        if (l < 40) value[i].fields.btype = "gaozhong";
-        else if (l < 50) value[i].fields.btype = "cet4";
-        else if (l < 70) value[i].fields.btype = "cet6";
-        else if (l < 80) value[i].fields.btype = "kaoyan";
-        else if (l < 90) value[i].fields.btype = "ielts";
-        else if (l < 100) value[i].fields.btype = "toelf";
-        else value[i].fields.btype = "gre";
-        var obj = value[i];
-        a.push(obj)
-      }
       that.setData({
-        starList:a
+        seenList: value
       })
     })
-  
+
     //that.getAllInfo(that.data.wordList, new Array())
   },
 
@@ -40,14 +27,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-      console.log(this.data.starList)
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
+
   },
 
   /**

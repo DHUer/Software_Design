@@ -89,20 +89,6 @@ function getWords(){
     return promise;
 }
 
-function getData2(){
-  wx.request({
-    url: 'http://192.168.43.240:8000/news/get_brief/',
-    success: function(res){
-      console.log("获取后端数据")
-      console.log(res)
-    },
-    fail: function (res) {
-
-    }
-  });
-  console.log(index.index);
-  return index.index;
-}
 
 //用户返回测试单词数据
 function setTest(test) {
@@ -120,6 +106,59 @@ function setTest(test) {
   })
 }
 
+//用户查看收藏文章
+function getCollection() {
+  return new Promise(function (resolve, reject) {
+    wx.request({
+      url: 'http://localhost:8000/news/get_all_collection/'  + wx.getStorageSync('uid') + '/',
+      success: function (res) {
+        resolve(res.data)
+
+      },
+      fail: function (res) {
+        reject(res)
+      }
+    })
+  })
+}
+
+//用户查看最近浏览
+function getSeen() {
+  return new Promise(function (resolve, reject) {
+    var temp = wx.getStorageSync('seenList')
+    if(temp.length>0){
+      var seenList=[];
+      let i=0;
+    for(i=0;i<temp.length;i++){
+      console.log(temp[i])
+      wx.request({
+        url: 'http://localhost:8000/news/get_article_by_id/' + temp[i] + '/',
+        success: function (resp) {
+          var l = resp.data.title.length;
+          if (l < 40) resp.data.btype = "gaozhong";
+          else if (l < 50) resp.data.btype = "cet4";
+          else if (l < 70) resp.data.btype = "cet6";
+          else if (l < 80) resp.data.btype = "kaoyan";
+          else if (l < 90) resp.data.btype = "ielts";
+          else if (l < 100) resp.data.btype = "toelf";
+          else resp.data.btype = "gre";
+          var obj = resp.data;
+          seenList.push(obj)
+          if (seenList.length=== temp.length) {
+            // console.log(seenList);
+            resolve(seenList)
+          }
+        },
+        fail: function (resp) {
+          console.log(resp)
+        }
+      })
+  }
+}
+
+  })
+}
+
 function getNext(){
   return index_next.next;
 }
@@ -132,27 +171,7 @@ function discoveryNext(){
   return discovery_next.next;
 }
 
-const categorysJson = require('./category')
-function getCategorys(){
-    return new Promise((resolve,reject) => {
-        // [{id:1,order:2...}]
-        var liked = wx.getStorageSync('USER_COLLECT') || [];
-        var categorys = categorysJson.data
 
-        categorys.forEach(category => {
-            if(!liked.length){
-                category.selected = true
-            }else{
-                category.selected = false
-                liked.forEach(like =>
-                    category.lanmu_id === like.id && (category.selected = true)
-                )
-            }
-        })
-
-        resolve(categorys)
-    })
-}
 
 //用户添加单词到服务器中的单词本
 function addToDict(word){
@@ -291,16 +310,15 @@ function getArticleWordList(pk){
 
 //收藏文章
 function addToFavorite(pk){
+  console.log(wx.getStorageSync('uid'));
   wx.request({
     url: 'http://localhost:8000/news/collect_article/' + pk + '/' + wx.getStorageSync('uid')
   })
 }
 module.exports.getData = getData;
-module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
-module.exports.getCategorys=getCategorys;
 
 module.exports.getArticles = getArticles;
 module.exports.getWords=getWords;
@@ -310,3 +328,7 @@ module.exports.deleteWord = deleteWord;
 module.exports.updateWordInfo = updateWordInfo;
 module.exports.getArticleWordList = getArticleWordList;
 module.exports.addToFavorite = addToFavorite;
+
+module.exports.getCollection = getCollection;
+module.exports.getSeen = getSeen;
+module.exports.setTest = setTest;

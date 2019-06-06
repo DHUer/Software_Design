@@ -12,6 +12,11 @@ Page({
       url: ''
     })
   },
+  bindTostar:function(){
+    wx.navigateTo({
+      url: '../star/star'
+    })
+  },
   bindTodatasta:function(){
     wx.navigateTo({
       url: '../data_statistics/data_statistics'
@@ -20,6 +25,11 @@ Page({
   bindToTest: function () {
     wx.navigateTo({
       url: '../wordstest/wordstest'
+    })
+  },
+  bindToSeen: function () {
+    wx.navigateTo({
+      url: '../seen/seen'
     })
   },
   onLoad: function () {

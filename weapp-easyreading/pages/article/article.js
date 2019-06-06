@@ -9,6 +9,8 @@ Page({
     detail_result: null,
     usPhonetic: null,
     ukPhonetic: null,
+    pk:0,
+    lshow:true
   },
 
   onLoad: function (options) {
@@ -30,6 +32,9 @@ Page({
     console.log(event)
   },
   onReady(e) {
+    this.setData({
+      lshow: false
+    })
     this.audioCtx = wx.createAudioContext('myAudio')
   },
   audioPlay() {
@@ -124,5 +129,15 @@ Page({
     //pk = this.data.pk
     //console.log(this.data.pk)
     util.addToFavorite(this.data.pk)
+  },
+  seen: function () {
+    var temp = wx.getStorageSync('seenList')
+    if (temp.length < 10) {
+      if (temp.length === 0) {
+        temp = [];
+      }
+        temp.push(this.data.pk)
+        wx.setStorageSync('seenList', temp)
+    }
   }
 })

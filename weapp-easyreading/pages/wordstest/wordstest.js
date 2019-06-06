@@ -55,7 +55,16 @@ Page({
     onecorrectnum:0,
       correctList:[0,0,0,0,0,0,0],
 
-    testList:[]
+    testList:[],
+    testres:{
+      'gaozhong':0,
+      'cet4':0,
+      'cet6':0,
+      'kaoyan':0,
+      'ielts':0,
+      'toefl':0,
+      'gre':0
+    }
   },
 
   /**
@@ -249,7 +258,7 @@ Page({
   search() {
     var that=this
       let num=that.data.wordsNum
-      if(num<10){
+      if(num<70){
 
    /* var idx = Math.floor(Math.random() * 12345) + 1
     var word = list.wordList[idx]*/
@@ -337,6 +346,7 @@ else{
     this.coList();
     this.showPie()
     this.showChart()
+    //util.setTest()
     var that=this
     setTimeout(function(){
       that.setData({ lshow: false })
@@ -348,9 +358,9 @@ else{
  coList(){
    var that = this
     return new Promise(function(resolve,reject){
-      
       var testNum=that.data.wordsNum-1;
       var cl=that.data.correctList;
+      var tr = that.data.testres;
       var flag1=parseInt(testNum/7);
       var flag2=testNum%7;
       for(var i=0;i<7;i++){
@@ -450,24 +460,6 @@ else{
         url: "./res/res"
       })
     }
-   /* var index = columnChart.getCurrentDataIndex(e);
-    if (index > -1 && index < chartData.sub.length && this.data.isMainChartDisplay) {
-      this.setData({
-        chartTitle: chartData.sub[index].title,
-        isMainChartDisplay: false
-      });
-      columnChart.updateData({
-        categories: chartData.sub[index].categories,
-        series: [{
-          name: '成交量',
-          data: chartData.sub[index].data,
-          format: function (val, name) {
-            return val.toFixed(2) + '%';
-          }
-        }]
-      });
-
-    }*/
 
   },
   

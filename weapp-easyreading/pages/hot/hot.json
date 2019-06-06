@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText": "近期热文"
+    "navigationBarTitleText": "近期热文",
+    "usingComponents": {
+      "w-tabs": "../../components/w-tabs/index"
+    }
 }

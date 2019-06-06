@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "mp-swipe-card": "../../components/mp-swipe-card/index",
-    "card-item": "./components/card-item/index"
+    "card-item": "./components/card-item/index",
+    "w-indicator": "../../components/w-activity-indicator/index"
   }
 }

@@ -1,4 +1,8 @@
 <!-- answer.wxml -->
+<view wx:if="{{lshow}}" style='justify-content: center;display: flex;align-items: center;height: 600px;'>
+ <w-indicator show text="Loading..." color='#35b59c' size="small" type="ball"  />
+</view>
+<view wx:if="{{!lshow}}">
 <view class="container">
     <view class="title">
         <text class="question-title">{{passageTitle}}</text>
@@ -30,9 +34,13 @@
     </view>
  
 </view>
-<view style="display: flex; flex-direction: row-reverse;">
-<image src="../../../images/heart2.png" style="width:60rpx; height:60rpx; margin-right: 20px" bindtap="favoirte"/>
-<text style="color:rgb(4, 211, 90)">收藏</text>
+<view style="display: flex; flex-direction: row-reverse;float:right;padding:10px;">
+<button style="background-color:#35b59c;width:85px;height:38px;padding:1px;" class="iconfont icon-Star" bindtap="favoirte">
+<text style='color:white;font-size:15px;'>  收藏</text>
+</button>
+<button style="background-color:#35b59c;width:85px;height:38px;padding:1px;margin-right:10px" class="iconfont icon-dagou" bindtap="seen">
+<text style='color:white;font-size:15px;'>  已看</text>
+</button>
 </view>
 
 
@@ -63,7 +71,6 @@
 </view>
 
 
-
 <view class='operations' wx:if="{{showModal}}">
     <view style='margin:10px' bindtap='detailListener'>
         <text class="iconfont icon-visible" style='font-size:15px;'>查看详解</text>
@@ -73,3 +80,4 @@
     </view>
 </view>
 <audio src="{{src}}" id="myAudio"></audio>
+</view>
