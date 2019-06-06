@@ -247,6 +247,7 @@ function updateWordInfo(){
             }
           )
           wx.setStorageSync('vocabulary', wordInfo)
+          wx.setStorageSync('wordLength', wordInfo.length)
         }, function (error){
         })
       }

@@ -19,8 +19,15 @@ Page({
       duration: 2000
     })
     this.renderData()
-    wx.setStorageSync('familiar', 0)
-    wx.setStorageSync('unfamiliar', 0)
+    if(wx.getStorageSync('familiar') == undefined){
+      wx.setStorageSync('familiar', 0)
+    }
+    if(wx.getStorageSync('unfamiliar') == undefined){
+      wx.setStorageSync('unfamiliar', 0)
+    }
+    if(wx.getStorageSync('signInDay') == undefined){
+      wx.setStorageSync('signInDay', 0)
+    }
   },
 
   /**
@@ -84,10 +91,20 @@ Page({
     })
   },
   familiar: function(){
+    var that = this
     var familiarCount = wx.getStorageSync('familiar')
     wx.setStorageSync('familiar', familiarCount + 1)
     console.log(wx.getStorageSync('familiar'))
     this.renderData()
+    if(familiarCount > 10){
+      wx.setStorageSync('signInDay', wx.getStorageSync('signInDay') +1)
+      wx.showToast({
+        title: '完成复习',
+        icon: 'loading',
+        duration: 1000
+      })
+      that.onUnload()
+    }
   },
   unfamiliar: function(){
     var unfamiliarCount = wx.getStorageSync('unfamiliar')

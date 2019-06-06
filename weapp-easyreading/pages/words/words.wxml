@@ -1,19 +1,19 @@
 <view class="page">
   <view class="count_day">
     <view class="qiandao_chishu">
-      <view style="font-size:50rpx">79</view>
+      <view style="font-size:50rpx">{{signInDay}}</view>
       <view style="font-size:25rpx; margin: 10px">签到次数</view>
     </view>
     <view style="border-left: 5px solid white; margin:5px;"></view>
     <view class="qiandao_chishu">
-      <view style="font-size:50rpx">79</view>
+      <view style="font-size:50rpx">{{wordLength}}</view>
       <view style="font-size:25rpx;margin: 10px">累计单词数</view>
     </view>
   </view>
   <view class="job_day">
     <view class="day_num" bindtap="getsql">{{day_num}}</view>
     <view class="day_notice">复习进度</view>
-    <progress percent="30" show-info color="#09BB07" active />
+    <progress percent="{{precent}}" show-info color="#09BB07" active />
   </view>
   <button  bindtap="toWordList" class="btn" hover-class="words_hover">单词列表</button>
   <button  bindtap="toWordReview" class="btn" hover-class="words_hover">单词复习</button>
