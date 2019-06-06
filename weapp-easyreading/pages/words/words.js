@@ -79,4 +79,14 @@ Page({
       url: "./wordList/wordList"
     })
   },
+  toWordReview: function(){ 
+    wx.showToast({
+      title: '加载数据',
+      icon: 'loading',
+      duration: 3000
+    })
+    wx.navigateTo({
+      url: "./wordReview/wordReview"
+    })
+  }
 })
