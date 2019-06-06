@@ -33,7 +33,10 @@
 
     <view class="feed-content">
             <view class="avatar flex-item">
+
                        <image src=""></image>
+
+                       <image src="{{itemData.fields.picUrl}}" lazy-load="true"></image>
                   </view>
 
                 <view class="answer-body" bindtap="bindItemTap">

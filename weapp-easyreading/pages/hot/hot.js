@@ -8,11 +8,11 @@ Page({
     interval: 5000,
     duration: 1000,
     feed: [],
-    articles:[],
-    art_length:0,
+    articles: [],
+    art_length: 0,
     feed_length: 0,
-      categoryTabs:[],
-      currentTab:0
+    categoryTabs: [],
+    currentTab: 0
   },
   onLoad: function () {
     console.log('onLoad')
@@ -20,11 +20,12 @@ Page({
     //调用应用实例的方法获取全局数据
     this.refresh();
   },
-  switchTab: function(e){
+  switchTab: function (e) {
     this.setData({
       currentNavtab: e.currentTarget.dataset.idx
     });
   },
+
 
   bindItemTap: function(e) {
     var pk = e.currentTarget.dataset['idx'];
@@ -35,28 +36,29 @@ Page({
       //希望在这里返回给我本片文章的PK值
        url: '../article/article?pk=' + pk+'&btype='+btype
 
+
     })
   },
-  bindQueTap: function() {
+  bindQueTap: function () {
     wx.navigateTo({
       url: '../question/question'
     })
   },
-    manageTabs:function(){
-        wx.navigateTo({
-            url: 'manage/manage'
-        })
-    },
+  manageTabs: function () {
+    wx.navigateTo({
+      url: 'manage/manage'
+    })
+  },
   upper: function () {
     wx.showNavigationBarLoading()
     this.refresh();
     console.log("upper");
-    setTimeout(function(){wx.hideNavigationBarLoading();wx.stopPullDownRefresh();}, 2000);
+    setTimeout(function () { wx.hideNavigationBarLoading(); wx.stopPullDownRefresh(); }, 2000);
   },
   lower: function (e) {
     wx.showNavigationBarLoading();
     var that = this;
-    setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
+    setTimeout(function () { wx.hideNavigationBarLoading(); that.nextLoad(); }, 1000);
     console.log("lower")
   },
   //scroll: function (e) {
@@ -64,15 +66,15 @@ Page({
   //},
 
   //网络请求数据, 实现刷新
-  refresh0: function(){
+  refresh0: function () {
     var index_api = '';
     util.getData(index_api)
-        .then(function(data){
-          //this.setData({
-          //
-          //});
-          console.log(data);
-        });
+      .then(function (data) {
+        //this.setData({
+        //
+        //});
+        console.log(data);
+      });
   },
 
   //使用本地 fake 数据实现刷新效果
@@ -102,12 +104,13 @@ Page({
           art_length: articles_data.length
         });
 
-      });
-    },
+
+    });
+  },
 
 
   //使用本地 fake 数据实现继续加载效果
-  nextLoad: function(){
+  nextLoad: function () {
     var next = util.discoveryNext();
     console.log("continueload");
     var next_data = next.data;
@@ -116,12 +119,12 @@ Page({
       feed_length: this.data.feed_length + next_data.length
     });
   },
-    onShow(){
-        if($vm.globalData.categoryChanged){
-            util.getCategorys().then(res => this.setData({
-                categoryTabs:res
-            }))
-            $vm.globalData.categoryChanged = false
-        }
+  onShow() {
+    if ($vm.globalData.categoryChanged) {
+      util.getCategorys().then(res => this.setData({
+        categoryTabs: res
+      }))
+      $vm.globalData.categoryChanged = false
     }
+  }
 });

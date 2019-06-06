@@ -16,4 +16,5 @@
     <progress percent="30" show-info color="#09BB07" active />
   </view>
   <button  bindtap="toWordList" class="btn" hover-class="words_hover">单词列表</button>
+  <button  bindtap="toWordReview" class="btn" hover-class="words_hover">单词复习</button>
 </view>

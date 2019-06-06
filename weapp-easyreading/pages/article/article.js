@@ -114,6 +114,8 @@ Page({
   },
   addToDict: function () {
     var wordBasic = this.data.result.query
+    console.log(wordBasic)
+    console.log(wx.getStorageSync('uid'))
     util.addToDict(wordBasic)
   }
 })

@@ -11,6 +11,7 @@ App({
     //已经缓存那么不需要重复的发送请求,卸载小程序将清除用户所有数据
     
     var temp = wx.getStorageSync('uid')
+    console.log(temp)
     if(temp.length == 0){
       wx.login({
         success: res => {
@@ -23,6 +24,9 @@ App({
             },
             success: function(respd){
               wx.setStorageSync('uid', respd.data)
+            },
+            fail: function(respd){
+              console.log(resp)
             }
           })
         }

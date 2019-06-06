@@ -265,15 +265,12 @@ function getArticleWordList(pk){
         var tempList = new Array()
         console.log(resp.data.content)
         for(var sentence in temp){
-          //console.log(temp[sentence])
+          
           tempList = tempList.concat(temp[sentence])
           tempList.push(523)
-          //tempList.push("\n")
-          //tempList = tempList.push("//")
-          //tempList = tempList.push("//")
+          
         }
-        //console.log(resp.data.content)
-        //console.log(tempList)
+        
         var result = new Object()
         result.passageTitle = resp.data.title
         result.passageArray = tempList

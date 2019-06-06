@@ -1,4 +1,4 @@
-// pages/words/wordList/wordList.js
+// pages/words/wordReview/wordReview.js
 var util = require('../../../utils/util')
 Page({
 
@@ -6,27 +6,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    console.log("---------------")
-    util.updateWordInfo().then(function (value){
-      console.log(value)
-      that.setData({
-        vocabulary: value
-      })
+    wx.showToast({
+      title: '加载数据',
+      icon: 'loading',
+      duration: 2000
     })
-    
+    this.renderData()
+    wx.setStorageSync('familiar', 0)
+    wx.setStorageSync('unfamiliar', 0)
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.renderData()
   },
 
   /**
@@ -70,7 +71,30 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  renderData: function(){
+    var len = wx.getStorageSync('vocabulary').length
+    var temp = wx.getStorageSync('vocabulary')
+    var i = Math.floor(Math.random()*len)
+    var that = this
+    this.setData({
+      audio: temp[i].audio,
+      wordId: temp[i].wordId,
+      paraphrase: temp[i].paraphrase,
+      phonetic: temp[i].phonetic
+    })
+  },
+  familiar: function(){
+    var familiarCount = wx.getStorageSync('familiar')
+    wx.setStorageSync('familiar', familiarCount + 1)
+    console.log(wx.getStorageSync('familiar'))
+    this.renderData()
+  },
+  unfamiliar: function(){
+    var unfamiliarCount = wx.getStorageSync('unfamiliar')
+    wx.setStorageSync('unfamiliar', unfamiliarCount + 1)
+    console.log(wx.getStorageSync('unfamiliar'))
+    this.renderData()
+  },
   audioPlay: function(e){
     const innerAudioContext = wx.createInnerAudioContext()
     innerAudioContext.autoplay = true
@@ -81,18 +105,16 @@ Page({
       console.log(res.errCode)
     })
   },
-
-  /**
-   * 处理单词删除逻辑
-   */
   deleteWord: function(e){
     var that = this
     var word = e.currentTarget.id
+    console.log(word)
     util.deleteWord(word)
     that.onLoad()
   },
   wordDetail: function(e){
     var word = e.currentTarget.id
+    console.log(word)
     wx.navigateTo({
       url: '../../article/wordDetails/wordDetails?wordBasic=' + word,
     })

@@ -11,7 +11,8 @@
     "pages/wordstest/res/res",
     "pages/data_statistics/data_statistics",
     "pages/article/wordDetails/wordDetails",
-    "pages/words/wordList/wordList"
+    "pages/words/wordList/wordList",
+    "pages/words/wordReview/wordReview"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,32 @@
+<view style="height: 100px">
+</view>
+
+<view class="back" >
+    <view class="card">
+        <view class="head" bindtap="audioPlay" id="{{audio}}">
+            <text class="iconfont icon-horn" style='color:rgb(116, 171, 30); margin:15px;font-size:25px' bindtap="audioPlay" id="{{item.audio}}"></text>
+            <text style="font-size: 25px;font-weight: 500;margin:10px" bindtap="audioPlay" id="{{audio}}">{{wordId}}</text>
+            <text style="font-size: 20px;font-weight: 300;margin:12px; text-align:center;" bindtap="audioPlay" id="{{audio}}">/{{phonetic}}/</text>
+        </view>
+        <view class="paraphrase_content">
+            <view class="paraphrase_content_shiyi">释义</view>
+            <view class="paraphrase_content_zhongwen">
+                <text style="color: grey; font-weight: 350; margin-left: 10px;">{{paraphrase}}</text>
+            </view>
+        </view>
+        <view class="single_line"></view>
+        <view class="bottom_content">
+            <view bindtap='wordDetail' id="{{wordId}}">详细信息</view>
+            <view bindtap="deleteWord" id="{{wordId}}">
+                移除
+                <text class="iconfont icon-DeleteFilled" style='font-size:17px; color:rgb(116, 171, 30)'></text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view style="height: 150px;">
+    </view>
+
+  <button  bindtap="familiar" class="btn" hover-class="words_hover">认识</button>
+  <button  bindtap="unfamiliar" class="btn" hover-class="words_hover">不认识</button>

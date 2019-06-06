@@ -1,0 +1,98 @@
+/* pages/words/wordList/wordList.wxss */
+@font-face {font-family: "iconfont";
+    src: url('iconfont.eot?t=1558103039623'); /* IE9 */
+    src: url('iconfont.eot?t=1558103039623#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQcAAsAAAAACCgAAAPQAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqEBINaATYCJAMMCwgABCAFhG0HQxstB1GULUqP7EdiDO6hSyYrW4TFeu2wAzygRGl/uYuH7/f739rnnKfa/k+i0ZNXSwwJGt4JkSFBJIuWQiiE8jvioTHXr1+6tGbEjr8uoxJKV1Vfe/9nc31vaeMRHuNQCiFBOIbW1ezpAaIywgkePIgoJC7iu8H/czm9u0p8fstymWPrUS/AOKDAxlg4pnCB9ALSgBrGrryIzQTaFjmGZxd3j4OFwugViEdsk8EipVVqCkNTqJdMLOI5oWZ6mj4beOa/P36LYkFSy4yBV3fO88Hum9u30NxQNch2EbzxzGDTyNgyUIhbpdabxmF0y1hbkU7qM+uKkMYKVBU+V5XXV/rDS0SdIe1C0poknRTPZhB8C+VAmfOfRh0tvAH8g6RpqNgqlJc1BlqrqUqL8ihJyVaozENICnwRVSCWAhgmhaaTAcelsWxy6linjME4HQzOOaNJtrqVTV1kQ09oc5qWhFAFqUiZ0SlMysiNi3OCtrS9Oz0ujUtFUogM4eRGMocQk0zTylC5VRVjNVJRxhYSMoOUYY9nMioIKktiVcyyXI6QkDYESgNsxXk7FmzyUp8iEGZKf0qJS31KZwpB2LPMprNhk2h5ndfCa3ZZ4YKG3aL9E34Pv3f/eLVKNZlfVkmlUMmQBQ9SzeFX11M5VG51XWe8bEBwmEAQHBooMxkdKyFp/w3gFvjNr1XIF5mGWxQURFi4FooaFfiN7eJ+X3xKbE9pS37YbLzZ3zRfLg/kpsu72jeZjCqOKe2Jbf1ExYXhyNuAxBB1qSccEJWKl2oPmPo+8OWbasSVdYh4sbBIiBPFxS8VhsQFAiIslijWJsrqtY3Ch1hVbbe+5K8ELz7w282P40WJdgstqXb/9R+b4kevYgNUH/yv6b8f38xP8vlf/oyDl5LXtwfe/+JSBVwLvlTQXW0W7ewDzXdgC/4pr2VFUQWGLheZa3P1RPbQ9I1ptFWZP1kMY3/95bPW+YSmWQxJwwJkTUtoIW1BTcc21DUdQtumy+kdE2IsSgsbPgGEoW9I+j5BNvSDFtIv1Mz9Q90wxtB2I5QW7FgJXgUJEkVO6Qdx1tTGMugqKLyHfSkTSQp88jOk5wCFXpBNXKKGjDGkf7WRqiEjTUUXYDuUZUOtNEdk6h1U263vm7ILeVlTDVZOCUgoyJHUB8IyjZpxa6tV7vX3wHpRSkgNrsL8DESPGychT9ACvZTWrXDX0rz3yoooZXA3QzQq5AKaoTSjDdKWtzuCjPIceoRbWz6qZtpKvfnl1fOtgzbjsBwpchTtx+CUk0Y53JyhhOKCS8+SDwY=') format('woff2'),
+    url('iconfont.woff?t=1558103039623') format('woff'),
+    url('iconfont.ttf?t=1558103039623') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont.svg?t=1558103039623#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-DeleteFilled:before {
+    content: "\e646";
+  }
+  
+  
+  .back{
+    background: rgba(184, 184, 184, 0.096);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card{
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .head{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+   
+  }
+  
+  .paraphrase_content{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    margin-bottom: 1px solid rgb(116, 171, 30);
+  }
+  
+  .paraphrase_content_shiyi{
+    width: 10%;
+    font-size: 15px;
+    color: rgb(116, 171, 30);
+    margin: 0px 5px 25px 10px;
+    background: rgba(117, 171, 30, 0.103);
+    text-align: center;
+  }
+  
+  .paraphrase_content_zhongwen{
+    width: 70%;
+    font-size: 19px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .single_line{
+    border: 1rpx solid rgba(199, 199, 199, 0.575);
+    margin: 5px 10px 5px 10px;
+  }
+  
+  .bottom_content{
+    display: flex;
+    flex-direction: row;
+    margin: 12px;
+    justify-content: space-between;
+    font-size: 17px;
+    color: rgba(128, 120, 120, 0.699);
+    font-weight: 400;
+  }
+
+  .btn{
+    width: 60%;
+    height: 50px;
+    background-color:#FFF;
+    color:rgba(7, 99, 34, 0.877);
+    border-radius: 50px;
+    box-shadow:3px 3px 3px 3px rgba(121, 115, 115, 0.445);
+    font-weight: 500;
+ }
+
+ .words_hover{
+    background-color: antiquewhite;
+    opacity: 0.9;
+    transform: scale(0.8);
+ }
