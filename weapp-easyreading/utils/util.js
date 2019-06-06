@@ -289,6 +289,12 @@ function getArticleWordList(pk){
   })
 }
 
+//收藏文章
+function addToFavorite(pk){
+  wx.request({
+    url: 'http://localhost:8000/news/collect/' + pk + '/' + wx.getStorageSync('uid')
+  })
+}
 module.exports.getData = getData;
 module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
@@ -303,3 +309,4 @@ module.exports.getUserDict = getUserDict;
 module.exports.deleteWord = deleteWord;
 module.exports.updateWordInfo = updateWordInfo;
 module.exports.getArticleWordList = getArticleWordList;
+module.exports.addToFavorite = addToFavorite;

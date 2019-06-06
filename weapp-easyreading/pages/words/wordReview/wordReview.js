@@ -25,6 +25,7 @@ Page({
     if(wx.getStorageSync('unfamiliar') == undefined){
       wx.setStorageSync('unfamiliar', 0)
     }
+
     if(wx.getStorageSync('signInDay') == undefined){
       wx.setStorageSync('signInDay', 0)
     }
@@ -97,13 +98,17 @@ Page({
     console.log(wx.getStorageSync('familiar'))
     this.renderData()
     if(familiarCount > 10){
-      wx.setStorageSync('signInDay', wx.getStorageSync('signInDay') +1)
+      console.log(typeof(wx.getStorageSync('signInDay')))
+
+      wx.setStorageSync('signInDay', wx.getStorageSync('signInDay') + 1)
       wx.showToast({
         title: '完成复习',
         icon: 'loading',
         duration: 1000
       })
-      that.onUnload()
+      wx.navigateTo({
+        url: '../words'
+      })
     }
   },
   unfamiliar: function(){

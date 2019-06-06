@@ -21,7 +21,8 @@ Page({
         publishTime: value.publishTime,
         passageLevel: value.passageLevel,
         passageLable: value.passageLable,
-        wordCounts: value.wordCounts
+        wordCounts: value.wordCounts,
+        pk: options.pk
       })
     })
   },
@@ -117,5 +118,11 @@ Page({
     console.log(wordBasic)
     console.log(wx.getStorageSync('uid'))
     util.addToDict(wordBasic)
+  },
+  favoirte: function(){
+    console.log(this.data.pk)
+    //pk = this.data.pk
+    //console.log(this.data.pk)
+    util.addToFavorite(this.data.pk)
   }
 })
