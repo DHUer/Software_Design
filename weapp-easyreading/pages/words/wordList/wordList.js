@@ -13,6 +13,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    console.log("---------------")
     util.updateWordInfo().then(function (value){
       console.log(value)
       that.setData({
