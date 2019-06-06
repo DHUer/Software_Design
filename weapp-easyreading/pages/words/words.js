@@ -16,6 +16,12 @@ Page({
     util.updateWordInfo().then(function(value){
       console.log(value)
     })
+    var fenzi = wx.getStorageSync('familiar')
+    var fenmu = wx.getStorageSync('wordLength')
+    console.log(fenzi)
+    this.setData({
+      precent: (fenzi/fenmu)*100
+    })
     //that.getAllInfo(that.data.wordList, new Array())
   },
 
@@ -34,6 +40,14 @@ Page({
       that.setData({
         wordList: value
       })
+    })
+    var fenzi = wx.getStorageSync('familiar')
+    var fenmu = wx.getStorageSync('wordLength')
+    console.log(fenzi)
+    this.setData({
+      precent: (fenzi/fenmu)*100,
+      signInDay: wx.getStorageSync('signInDay'),
+      wordLength: wx.getStorageSync('wordLength')
     })
   },
 
@@ -80,11 +94,6 @@ Page({
     })
   },
   toWordReview: function(){ 
-    wx.showToast({
-      title: '加载数据',
-      icon: 'loading',
-      duration: 3000
-    })
     wx.navigateTo({
       url: "./wordReview/wordReview"
     })
