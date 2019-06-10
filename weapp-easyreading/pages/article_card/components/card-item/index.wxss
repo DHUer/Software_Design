@@ -20,8 +20,8 @@
 
 .feed-content{
     width: 300px;
-    margin:15px;
-    padding-top: 30px;
+    margin:10px;
+    padding-top: 45px;
 }
 
 .feed-content .answer-body{
@@ -96,3 +96,14 @@
     font-size: 24rpx;
 }
 
+.arrange{
+  margin-top: 10px;
+    display: flex;
+    margin-right: 10px;
+    font-size: 15px;
+    flex-direction:row;
+    width: 100%;
+    flex-wrap: wrap;
+    word-wrap:break-word;
+    text-justify: auto;
+  }

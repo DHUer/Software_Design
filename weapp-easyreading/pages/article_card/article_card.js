@@ -19,11 +19,13 @@ Page({
   onLoad: function () {
     var that=this
     this.getData().then(function(res){
-      console.log(res)
+      that.getContent().then(function(rrr){
+      console.log(rrr)
       that.setData(
-        {articles:res}
+        {articles:rrr}
       )
     util.getUserDict("start")
+    })
     })
   },
   onReady: function (){
@@ -73,30 +75,40 @@ Page({
   getData: function () {
     var promise = new Promise((resolve, reject) => {
     var that=this
-    util.getArticles().then(function(res){
+    
+    util.gettopArticles().then(function(res){
       console.log("loaddata");
-      var feed = res.data
-      var articles_data = feed;
-     // console.log(articles_data)
-     var a=[];
+      var feed = res.data.article
+      that.setData({feed:feed });
 
-      that.setData({
-        feed: articles_data,
-
-      });
-
-    for(let i=0;i<feed.length;i++){
-      that.getOneArticle(that.data.feed[i].pk).then(function(r){
-          that.data.feed[i].fields.content = r;
-
-         
-        })
-
+   /* for(let i=0;i<feed.length;i++){
+      util.getArticleWordList(feed[i].id).then(function(r){
+        //that.data.feed[i].content = r.passageArray;
+        console.log(r)
+        templist.push(r)
+      })
     }
-
-      a = that.data.feed;
-      resolve(a)
+      console.log(templist)
+      resolve(templist)*/
+      resolve(feed)
     });
+      
+    });
+    return promise;
+  },
+
+  getContent:function(){
+    var that=this;
+    var promise = new Promise((resolve, reject) => {
+      var templist = [];
+      var feed=that.data.feed;
+      for (let i = 0; i < feed.length; i++) {
+        util.getArticleWordList(feed[i].id).then(function (r) {
+          //that.data.feed[i].content = r.passageArray;
+          templist.push(r);
+          if (i === feed.length-1) resolve(templist)
+        })
+      }
     });
     return promise;
   }

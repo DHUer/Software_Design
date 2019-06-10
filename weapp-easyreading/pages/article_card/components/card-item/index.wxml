@@ -1,5 +1,5 @@
 <scroll-view scroll-y="true" class="mp-swipe-card-item"  bindtap="bindItemTap">
-  <view bind:tap="handleTap" class="id-text">{{itemData.fields.title}}</view>
+  <view bind:tap="handleTap" class="id-text">{{itemData.passageTitle}}</view>
 
     <view class='feed-tail'>
 
@@ -7,15 +7,15 @@
 
             <view class="left">
                 <view class="art-tag">
-                    <text class="tag">{{itemData.fields.atype}}</text>
-                    <text class="tag">tag2</text>
+                    <text class="tag">{{itemData.passageLable}}</text>
+                    <text class="tag">{{itemData.passageLevel}}</text>
                 </view>
             </view>
 
             <view class="right">
                 <view class="book">
                     <image src="../../../../images/book.png"></image>
-                    <text>500词 </text>
+                    <text>{{itemData.wordCounts}}词 </text>
                 </view>
                 <view class="watch">
                     <image src="../../../../images/eye.png"></image>
@@ -36,22 +36,21 @@
 
                       
 
-                       <image src="{{itemData.fields.picUrl}}" lazy-load="true"></image>
+                       <image src="{{itemData.picurl}}" lazy-load="true"></image>
                   </view>
 
                 <view class="answer-body" bindtap="bindItemTap">
-                    <a class="">
-                       {{itemData.fields.content}}
-                        </a>
-              <!-->  <view wx:for="{{itemData.fields.content}}" wx:key="" data-text="{{item}}" bindtap="popUp" hover-class='hover' >
+                    <view class="arrange">
+             <view wx:for="{{itemData.passageArray}}" wx:key="" data-text="{{item}}">
        <view wx:if="{{item == 523}}">
-            <view style="width:400px;height:10px"></view>
+            <view style="width:400px;height:10px;"></view>
             <view style="width:400px;height:10px"></view>  
        </view>
        <view wx:else>
        <text style='margin-left: 10px;  word-wrap:break-word;'>{{item}}</text>  
        </view>   
-    </view>-->
+    </view>
+                </view>
                 </view>
 </view>
 

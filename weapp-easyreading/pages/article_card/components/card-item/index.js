@@ -29,10 +29,10 @@ Component({
     bindItemTap: function () {
       console.log(this.data.itemData)
       var pk = this.data.itemData.pk;
-      var btype=this.data.itemData.fields.btype;
+      var passageLevel = this.data.itemData.passageLevel
       wx.navigateTo({
         //希望在这里返回给我本片文章的PK值
-        url: '../article/article?pk=' + pk + "&btype="+btype
+        url: '../article/article?pk=' + pk + "&btype="+passageLevel
 
       })
     }

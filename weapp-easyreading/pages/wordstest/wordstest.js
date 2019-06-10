@@ -54,9 +54,11 @@ Page({
 
     onecorrectnum:0,
       correctList:[0,0,0,0,0,0,0],
+      
 
     testList:[],
-    testres:{
+    testres: [0, 0, 0, 0, 0, 0, 0]
+   /* testres:{
       'gaozhong':0,
       'cet4':0,
       'cet6':0,
@@ -64,7 +66,7 @@ Page({
       'ielts':0,
       'toefl':0,
       'gre':0
-    }
+    }*/
   },
 
   /**
@@ -77,7 +79,8 @@ Page({
           const feed=res.data;
 
           that.setData({
-              allList:feed
+              allList:feed,
+            correctList: [0, 0, 0, 0, 0, 0, 0]
           });
           that.search()
       });
@@ -346,7 +349,9 @@ else{
     this.coList();
     this.showPie()
     this.showChart()
-    //util.setTest()
+
+    util.setTest(this.data.testres);
+
     var that=this
     setTimeout(function(){
       that.setData({ lshow: false })
@@ -358,20 +363,26 @@ else{
  coList(){
    var that = this
     return new Promise(function(resolve,reject){
-      var testNum=that.data.wordsNum-1;
-      var cl=that.data.correctList;
-      var tr = that.data.testres;
-      var flag1=parseInt(testNum/7);
-      var flag2=testNum%7;
-      for(var i=0;i<7;i++){
-        if(i<=flag2){
+      let testNum=that.data.wordsNum-1;
+      let cl=that.data.correctList;
+      var tr=that.data.testres;
+      let flag1=parseInt(testNum/7);
+      let flag2=testNum%7;
+      console.log("flag1=" + flag1 +",flag2="+flag2)
+      for(let i=0;i<7;i++){
+        if(i<flag2){
           cl[i]=(cl[i]/(flag1+1))*100;
+          tr[i]=cl[i]/100;
         }
-        else if(flag1!=0)cl[i]=cl[i]*100/flag1;
+        else if(flag1!=0){
+          cl[i]=cl[i]*100/flag1;
+          tr[i]= cl[i] / 100;
+        }
       }
 
-      that.setData({cl})
-      console.log(cl)
+      that.setData({correctList:cl})
+      that.setData({testres:tr})
+      console.log(tr)
     })
   },
   showPie(){

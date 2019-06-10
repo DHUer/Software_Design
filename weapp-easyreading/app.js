@@ -6,7 +6,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    wx.setStorageSync('uid', '')
     //这一步用来保存用户的openID，再发送请求之前要先判断本地是否已经缓存了UID，如果
     //已经缓存那么不需要重复的发送请求,卸载小程序将清除用户所有数据
     var temp = wx.getStorageSync('uid')

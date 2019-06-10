@@ -133,7 +133,7 @@
     border-radius: 20rpx;
     margin: 8rpx 5rpx;
     background: #EEF5F8;
-    color:#38c938;
+    color:#35b59c;
     font-size: 20rpx;
     vertical-align: middle;
 }
@@ -302,6 +302,6 @@ width: 320px;
 }
 
 .icon-smile:before {
-  color: #38c938;
+  color: #35b59c;
   content: "\e783";
 }

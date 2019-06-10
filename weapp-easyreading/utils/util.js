@@ -92,8 +92,16 @@ function getWords(){
 
 //用户返回测试单词数据
 function setTest(test) {
+  console.log(test)
   wx.request({
-    url: 'http://localhost:8000/news/get_test_history/' + wx.getStorageSync('uid') + '/' + test + '/',
+    url: 'http://localhost:8000/news/save_test_res/',
+    data: {
+      "uid": wx.getStorageSync('uid'),
+      "cover_rate": test
+    },
+    header: {
+      'content-type': 'application/json' //默认值
+    },
     success: function (resp) {
       wx.showToast({
         title: "success",
@@ -157,6 +165,35 @@ function getSeen() {
 }
 
   })
+}
+
+/**
+ * 用户查看前10篇
+ */
+function gettopArticles() {
+  var promise = new Promise((resolve, reject) => {
+    wx.request({
+      url: 'http://localhost:8000/news/get_top_10/' + wx.getStorageSync('uid') + '/',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log("获取top-10文章")
+        resolve(res)
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: "你还没完成词汇测试哦！",
+          icon: 'none',
+          duration: 1000,
+          mask: true
+        })
+        reject(res.data)
+      }
+    })
+  });
+
+  return promise;
 }
 
 function getNext(){
@@ -283,7 +320,6 @@ function getArticleWordList(pk){
       success: function(resp){
         var temp = resp.data.content
         var tempList = new Array()
-        console.log(resp.data.content)
         for(var sentence in temp){
           
           tempList = tempList.concat(temp[sentence])
@@ -298,7 +334,8 @@ function getArticleWordList(pk){
         result.passageLevel = "CET-4"
         result.passageLable = resp.data.type
         result.wordCounts = resp.data.num
-        console.log(result)
+        result.picurl ="http://localhost:8000/static/pic/"+resp.data.pic
+        result.pk = resp.id
         resolve(result)
       },
       fail: function(resp){
@@ -331,4 +368,5 @@ module.exports.addToFavorite = addToFavorite;
 
 module.exports.getCollection = getCollection;
 module.exports.getSeen = getSeen;
-module.exports.setTest = setTest;
+module.exports.setTest = setTest; 
+module.exports.gettopArticles = gettopArticles;
