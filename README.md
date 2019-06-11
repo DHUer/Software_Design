@@ -73,9 +73,14 @@ Course Project of Software Engineering designed and implmented by Deng yangxiang
 * 
 
 ### 4 效果展示
+![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E4%B8%BB%E9%98%85%E8%AF%BB%E7%95%8C%E9%9D%A2.gif) 
 
-![image]()
+![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E5%8D%95%E8%AF%8D%E6%9C%AC.gif)
 
+![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E6%94%B6%E8%97%8F%E6%96%87%E7%AB%A0.gif)
 
+ ![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E8%83%8C%E5%8D%95%E8%AF%8D%E4%BF%A1%E6%81%AF.gif)
+
+![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95.gif) 
 
 
