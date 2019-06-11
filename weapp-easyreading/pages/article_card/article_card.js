@@ -34,9 +34,12 @@ Page({
   handleSwipeOut(...args) {
     console.log(args)
   },
+  /*
   handleClickCard(...args) {
+    console.log(">>>>>>>>>>>>>>>>>>>")
     console.log(args)
-  },
+    console.log(">>>>>>>>>>>>>>>>>>>")
+  },*/
   getUserInfo: function(e) {
 
   },

@@ -1,27 +1,32 @@
-# Software_Design
-Course Project of Software Engineering
+Course Project of Software Engineering designed and implmented by Deng yangxiang, Cheng caiting and Wanglun cooperately. 
 
 
-### 相关技术文档支持
+### 1 相关技术文档支持
 
 * 微信小程序官方文档
+
   https://developers.weixin.qq.com/miniprogram/dev/index.html
   
 * 一条龙服务repo
+
   https://github.com/justjavac/awesome-wechat-weapp
   
 * 小程序登录、获取用户信息、openid和unionid详解
+
   https://www.daguanren.cc/post/wxlogin_getuserinfo_openid_unionid.html
-=======
+
 
 * 保持登陆状态具体解决办法
+
   https://www.cnblogs.com/gdutzyh/p/7251432.html
 
   https://www.jianshu.com/p/2af0d2e9f375
 
   http://djangobook.py3k.cn/2.0/chapter14/
   
-### 功能点
+### 2 功能点
+
+#### 2.1 主要功能点
 
 * 测试词汇量
   * 利用现成的测试工具
@@ -37,7 +42,6 @@ Course Project of Software Engineering
   * 简单的温习方式（参考欧陆）
   * 记录词频（查过多少回）
   * 查词扒词典
-    * 允许设置默认解释来源
 * 爬取各大外国新闻网站文章
   * 一天爬一次
   * 数据存到服务器
@@ -46,13 +50,32 @@ Course Project of Software Engineering
 * 推荐热门/多人在读/文章
   * 后台收集读者阅读数据
   * 直接在外文网站上扒热门的
-* 点击**取词翻译**（有点难）
+* 轻触即可**取词翻译**
 
-次要功能
-* 评论/收藏/点赞
+#### 2.2 次要功能点
+
 * 收藏
 * 已经看过多少词
 * 统计阅读记录/浏览/
 * 阅读榜
+
+### 3 技术栈
+
+#### 3.1 后端
+
+* 后端服务器：Django 
+* 数据爬取：Scrapy
+* 数据库：sqlite
+
+#### 3.2 前端
+
+* Promise同步消息处理
+* 
+
+### 4 效果展示
+
+![image]()
+
+
 
 

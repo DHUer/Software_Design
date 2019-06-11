@@ -27,8 +27,11 @@ Component({
       console.log('tap')
     },
     bindItemTap: function () {
-      console.log(this.data.itemData)
+      //console.log(this.data.itemData)
+      //console.log("单击事件")
+      //console.log()
       var pk = this.data.itemData.pk;
+      //console.log(pk)
       var passageLevel = this.data.itemData.passageLevel
       wx.navigateTo({
         //希望在这里返回给我本片文章的PK值
