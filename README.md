@@ -5,6 +5,7 @@
 * 现有阅读小程序大多**需要付费**或者是**免费但需要强制性推广**。
 * 小程序阅读**可选择范围有限**，并且无法个性化推荐。
   
+***
 
 ## 2、功能点
 ### 2.1 主要功能点
@@ -39,6 +40,8 @@
 * 统计阅读记录/浏览
 * 阅读榜
 
+***
+
 ## 3、相关技术与资料收集
 ### 3.1 技术概览
 * 前端：微信小程序开发全家桶
@@ -68,19 +71,32 @@
 
   http://djangobook.py3k.cn/2.0/chapter14/
   
+
+***
+
 ## 4、核心业务说明
 ### 4.1 推荐文章
 ![image](display-images/getArticle.png)
-### 4 效果展示
+
+
+
+
+***
+
+## 5、效果展示
 ![image](display-images/主阅读界面.gif) 
 
-![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E5%8D%95%E8%AF%8D%E6%9C%AC.gif)
+![image](display-images/单词本.gif)
 
-![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E6%94%B6%E8%97%8F%E6%96%87%E7%AB%A0.gif)
+![image](display-images/收藏文章.gif)
 
- ![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E8%83%8C%E5%8D%95%E8%AF%8D%E4%BF%A1%E6%81%AF.gif)
+ ![image](display-images/背单词信息.gif)
 
-![image](https://github.com/DHUer/Software_Design/blob/master/display-images/%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95.gif) 
+![image](display-images/词汇量测试.gif) 
+
+***
+
+## 6、总结
 
 
-> developed by: DengYanxiang,ChengCaiting,Wanglun
+![image](display-images/team.PNG)
