@@ -331,7 +331,6 @@ function getArticleWordList(pk){
         result.passageTitle = resp.data.title
         result.passageArray = tempList
         result.publishTime = resp.data.date
-        result.passageLevel = "CET-4"
         result.passageLable = resp.data.type
         result.wordCounts = resp.data.num
         result.picurl ="http://localhost:8000/static/pic/"+resp.data.pic

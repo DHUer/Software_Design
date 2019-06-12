@@ -15,6 +15,7 @@ App({
         success: res => {
           // 发送 res.code 到后台换取 unionId
           wx.setStorageSync('code', res.code)
+          console.log(res.code)
           wx.request({
             url:'http://localhost:8000/news/createUser',
             data:{

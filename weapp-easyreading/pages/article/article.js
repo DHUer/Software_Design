@@ -15,13 +15,14 @@ Page({
 
   onLoad: function (options) {
     console.log("当前文章id:" + options.pk)
+    
     var that = this;
     util.getArticleWordList(options.pk).then(function (value) {
       that.setData({
         passageTitle: value.passageTitle,
         passageArray: value.passageArray,
         publishTime: value.publishTime,
-        passageLevel: value.passageLevel,
+        passageLevel: options.btype,
         passageLable: value.passageLable,
         wordCounts: value.wordCounts,
         pk: options.pk
@@ -129,6 +130,12 @@ Page({
     //pk = this.data.pk
     //console.log(this.data.pk)
     util.addToFavorite(this.data.pk)
+    wx.showToast({
+      title: "success",
+        icon: 'success',
+        duration: 1000,
+        mask: true
+    })
   },
   seen: function () {
     var temp = wx.getStorageSync('seenList')
