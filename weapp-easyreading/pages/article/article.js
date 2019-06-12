@@ -16,13 +16,14 @@ Page({
 
   onLoad: function (options) {
     console.log("当前文章id:" + options.pk)
+    
     var that = this;
     util.getArticleWordList(options.pk).then(function (value) {
       that.setData({
         passageTitle: value.passageTitle,
         passageArray: value.passageArray,
         publishTime: value.publishTime,
-        passageLevel: value.passageLevel,
+        passageLevel: options.btype,
         passageLable: value.passageLable,
         wordCounts: value.wordCounts,
         pk: options.pk

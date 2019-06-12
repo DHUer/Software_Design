@@ -147,8 +147,6 @@
 
 ## 6、总结
 
-![image](display-images/team.PNG)
-=======
 * 三个臭皮匠顶个诸葛亮:)
 ![image](display-images/team.PNG)
 
