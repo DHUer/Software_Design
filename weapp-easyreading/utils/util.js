@@ -28,6 +28,7 @@ var discovery = require('../data/data_discovery.js')
 var discovery_next = require('../data/data_discovery_next.js')
 
 function getData(url){
+  wx.setStorageSync('uid', '')
   return new Promise(function(resolve, reject){
     wx.request({
       url: url,
@@ -117,6 +118,7 @@ function setTest(test) {
 //用户查看收藏文章
 function getCollection() {
   return new Promise(function (resolve, reject) {
+    console.log(wx.getStorageSync('uid') )
     wx.request({
       url: 'http://localhost:8000/news/get_all_collection/'  + wx.getStorageSync('uid') + '/',
       success: function (res) {
@@ -321,21 +323,31 @@ function getArticleWordList(pk){
         var temp = resp.data.content
         var tempList = new Array()
         for(var sentence in temp){
-          
+          tempList.push(" ")
+          tempList.push(" ")
+          tempList.push(" ")
           tempList = tempList.concat(temp[sentence])
           tempList.push(523)
-          
         }
         
         var result = new Object()
         result.passageTitle = resp.data.title
         result.passageArray = tempList
         result.publishTime = resp.data.date
-        result.passageLevel = "CET-4"
+        
+        var l = resp.data.title.length;
+        if (l < 40) result.passageLevel = "gaozhong";
+        else if (l < 50) result.passageLevel = "cet4";
+        else if (l < 70) result.passageLevel = "cet6";
+        else if (l < 80) result.passageLevel = "kaoyan";
+        else if (l < 90) result.passageLevel = "ielts";
+        else if (l < 100) result.passageLevel = "toelf";
+        else result.passageLevel = "gre";
+
         result.passageLable = resp.data.type
         result.wordCounts = resp.data.num
         result.picurl ="http://localhost:8000/static/pic/"+resp.data.pic
-        result.pk = resp.id
+        result.pk = resp.data.id
         resolve(result)
       },
       fail: function(resp){

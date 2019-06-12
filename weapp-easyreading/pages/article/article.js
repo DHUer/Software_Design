@@ -1,5 +1,6 @@
 //answer.js
 var util = require('../../utils/util.js')
+import { Toast } from '../../components/index';
 const sha = require('sha256.js') //此为签名加密算法
 var app = getApp()
 Page({
@@ -129,6 +130,12 @@ Page({
     //pk = this.data.pk
     //console.log(this.data.pk)
     util.addToFavorite(this.data.pk)
+    wx.showToast({
+      title: "success",
+      icon: 'success',
+      duration: 1000,
+      mask: true
+    })
   },
   seen: function () {
     var temp = wx.getStorageSync('seenList')
@@ -138,6 +145,12 @@ Page({
       }
         temp.push(this.data.pk)
         wx.setStorageSync('seenList', temp)
+      wx.showToast({
+        title: "success",
+        icon: 'success',
+        duration: 1000,
+        mask: true
+      })
     }
   }
 })
