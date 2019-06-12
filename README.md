@@ -114,7 +114,7 @@
 ***
 
 ## 5、效果展示
-<center>
+<div align=center>
 
 ### 5.1 主阅读界面
 
@@ -143,11 +143,9 @@
 ### 5.5 单词量测试
 
 ![image](display-images/词汇量测试.gif) 
-</center>
+</div >
 
 ## 6、总结
-<<<<<<< HEAD
-
 
 ![image](display-images/team.PNG)
 =======
@@ -194,4 +192,3 @@ urlpatterns = [
     ...
 
 ```
->>>>>>> 433a7100b6eb8660137d05d22434bcb4468ad346
