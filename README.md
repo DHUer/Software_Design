@@ -142,19 +142,43 @@ news b:{
 ***
 
 ## 5、效果展示
+<div align=center>
+
+### 5.1 主阅读界面
+
+
 ![image](display-images/主阅读界面.gif) 
+
+
+### 5.2 单词本界面
+
 
 ![image](display-images/单词本.gif)
 
+
+### 5.3 收藏文章界面
+
+
 ![image](display-images/收藏文章.gif)
+
+
+### 5.4 背单词界面
+
 
  ![image](display-images/背单词信息.gif)
 
+
+### 5.5 单词量测试界面
+
 ![image](display-images/词汇量测试.gif) 
 
-***
+### 5.6 文章推荐主界面
+
+![image](display-images/文章推荐.gif)
+</div >
 
 ## 6、总结
+
 * 三个臭皮匠顶个诸葛亮:)
 ![image](display-images/team.PNG)
 

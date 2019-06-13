@@ -1,6 +1,7 @@
 {
     "navigationBarTitleText": "",
     "usingComponents": {
-      "w-indicator": "../../components/w-activity-indicator/index"
+      "w-indicator": "../../components/w-activity-indicator/index",
+      "w-toast": "/components/w-toast/index"
     }
 }
