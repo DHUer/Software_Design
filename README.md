@@ -82,6 +82,7 @@
 
 ### 4.1 后端
 * 整体业务流程
+
 ![image](display-images/getArticle.png)
 
 
@@ -183,11 +184,10 @@ news b:{
 * 图形化组件库
    
     * wxcharts
-    
+
     ![image](display-images/图形1.png)![image](display-images/图形2.png)
 
 
-* 
 
 ***
 
